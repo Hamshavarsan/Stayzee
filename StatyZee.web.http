@@ -1,0 +1,6 @@
+@StatyZee.web_HostAddress = http://localhost:5219
+
+GET {{StatyZee.web_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
