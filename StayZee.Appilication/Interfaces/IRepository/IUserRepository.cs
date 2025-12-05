@@ -12,5 +12,8 @@ namespace StayZee.Application.Interfaces.IRepository
     {
         Task<User> GetByUsernameAsync(string username);
         Task<User> AddUserAsync(User user);
+        Task<IEnumerable<User>> GetAllUsersAsync();
+        Task<User?> GetUserByIdAsync(int id);
+        Task UpdateUserAsync(User user);
     }
 }

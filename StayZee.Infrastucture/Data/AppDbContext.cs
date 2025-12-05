@@ -10,7 +10,7 @@ namespace StayZee.Infrastructure.Data
 
         public DbSet<HomeOwner> HomeOwners { get; set; }
         public DbSet<Home> Homes { get; set; }
-        public DbSet<HomeApprovalStatus> HomeApporavalStatuses { get; set; }
+        public DbSet<HomeApprovalStatus> HomeApprovalStatuses { get; set; }
         public DbSet<HomeDocument> HomeDocuments { get; set; }
         public DbSet<Booking> Bookings { get; set; }
         public DbSet<Customer> Customers { get; set; }

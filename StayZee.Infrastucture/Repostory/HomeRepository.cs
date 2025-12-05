@@ -35,5 +35,11 @@ namespace StayZee.Infrastructure.Repositories
                 .Include(h => h.Bookings)
                 .ToListAsync();
         }
+
+        public async Task UpdateAsync(Home home)
+        {
+            _context.Homes.Update(home);
+            await _context.SaveChangesAsync();
+        }
     }
 }

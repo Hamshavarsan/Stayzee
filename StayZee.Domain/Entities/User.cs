@@ -16,5 +16,6 @@ namespace StayZee.Domain.Entities
         public string NICOrPassport { get; set; }
         public string PasswordHash { get; set; }
         public string Role { get; set; } // "Admin", "Customer", "Rentals"
+        public bool IsBlocked { get; set; } = false;
     }
 }
