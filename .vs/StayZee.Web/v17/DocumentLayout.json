@@ -1,0 +1,922 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\gisha\\Desktop\\final24\\Stayzee\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{B674CCDB-81CE-4951-BFDC-790861BDDE00}|StayZee.Appilication\\StayZee.Application.csproj|c:\\users\\gisha\\desktop\\final24\\stayzee\\stayzee.appilication\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B674CCDB-81CE-4951-BFDC-790861BDDE00}|StayZee.Appilication\\StayZee.Application.csproj|solutionrelative:stayzee.appilication\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D51D96ED-D773-4C31-8026-A8A36E9B2B54}|StayZee.Web\\StayZee.Web.csproj|c:\\users\\gisha\\desktop\\final24\\stayzee\\stayzee.web\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{D51D96ED-D773-4C31-8026-A8A36E9B2B54}|StayZee.Web\\StayZee.Web.csproj|solutionrelative:stayzee.web\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D51D96ED-D773-4C31-8026-A8A36E9B2B54}|StayZee.Web\\StayZee.Web.csproj|c:\\users\\gisha\\desktop\\final24\\stayzee\\stayzee.web\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D51D96ED-D773-4C31-8026-A8A36E9B2B54}|StayZee.Web\\StayZee.Web.csproj|solutionrelative:stayzee.web\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D51D96ED-D773-4C31-8026-A8A36E9B2B54}|StayZee.Web\\StayZee.Web.csproj|c:\\users\\gisha\\desktop\\final24\\stayzee\\stayzee.web\\controllers\\bookingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D51D96ED-D773-4C31-8026-A8A36E9B2B54}|StayZee.Web\\StayZee.Web.csproj|solutionrelative:stayzee.web\\controllers\\bookingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D51D96ED-D773-4C31-8026-A8A36E9B2B54}|StayZee.Web\\StayZee.Web.csproj|c:\\users\\gisha\\desktop\\final24\\stayzee\\stayzee.web\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D51D96ED-D773-4C31-8026-A8A36E9B2B54}|StayZee.Web\\StayZee.Web.csproj|solutionrelative:stayzee.web\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D51D96ED-D773-4C31-8026-A8A36E9B2B54}|StayZee.Web\\StayZee.Web.csproj|c:\\users\\gisha\\desktop\\final24\\stayzee\\stayzee.web\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D51D96ED-D773-4C31-8026-A8A36E9B2B54}|StayZee.Web\\StayZee.Web.csproj|solutionrelative:stayzee.web\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D51D96ED-D773-4C31-8026-A8A36E9B2B54}|StayZee.Web\\StayZee.Web.csproj|c:\\users\\gisha\\desktop\\final24\\stayzee\\stayzee.web\\stayzee.web.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
+      "RelativeMoniker": "D:0:0:{D51D96ED-D773-4C31-8026-A8A36E9B2B54}|StayZee.Web\\StayZee.Web.csproj|solutionrelative:stayzee.web\\stayzee.web.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D51D96ED-D773-4C31-8026-A8A36E9B2B54}|StayZee.Web\\StayZee.Web.csproj|c:\\users\\gisha\\desktop\\final24\\stayzee\\stayzee.web\\controllers\\propertycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D51D96ED-D773-4C31-8026-A8A36E9B2B54}|StayZee.Web\\StayZee.Web.csproj|solutionrelative:stayzee.web\\controllers\\propertycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D51D96ED-D773-4C31-8026-A8A36E9B2B54}|StayZee.Web\\StayZee.Web.csproj|c:\\users\\gisha\\desktop\\final24\\stayzee\\stayzee.web\\controllers\\homepagecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D51D96ED-D773-4C31-8026-A8A36E9B2B54}|StayZee.Web\\StayZee.Web.csproj|solutionrelative:stayzee.web\\controllers\\homepagecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E9A88442-B2B1-4C0B-8C57-FF8E45DC579D}|StayZee.Infrastucture\\StayZee.Infrastructure.csproj|c:\\users\\gisha\\desktop\\final24\\stayzee\\stayzee.infrastucture\\repostory\\customerrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E9A88442-B2B1-4C0B-8C57-FF8E45DC579D}|StayZee.Infrastucture\\StayZee.Infrastructure.csproj|solutionrelative:stayzee.infrastucture\\repostory\\customerrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B674CCDB-81CE-4951-BFDC-790861BDDE00}|StayZee.Appilication\\StayZee.Application.csproj|c:\\users\\gisha\\desktop\\final24\\stayzee\\stayzee.appilication\\interfaces\\irepository\\icustomerrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B674CCDB-81CE-4951-BFDC-790861BDDE00}|StayZee.Appilication\\StayZee.Application.csproj|solutionrelative:stayzee.appilication\\interfaces\\irepository\\icustomerrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E9A88442-B2B1-4C0B-8C57-FF8E45DC579D}|StayZee.Infrastucture\\StayZee.Infrastructure.csproj|c:\\users\\gisha\\desktop\\final24\\stayzee\\stayzee.infrastucture\\repostory\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E9A88442-B2B1-4C0B-8C57-FF8E45DC579D}|StayZee.Infrastucture\\StayZee.Infrastructure.csproj|solutionrelative:stayzee.infrastucture\\repostory\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E9A88442-B2B1-4C0B-8C57-FF8E45DC579D}|StayZee.Infrastucture\\StayZee.Infrastructure.csproj|c:\\users\\gisha\\desktop\\final24\\stayzee\\stayzee.infrastucture\\migrations\\20251207135255_updatebookingtable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E9A88442-B2B1-4C0B-8C57-FF8E45DC579D}|StayZee.Infrastucture\\StayZee.Infrastructure.csproj|solutionrelative:stayzee.infrastucture\\migrations\\20251207135255_updatebookingtable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E9A88442-B2B1-4C0B-8C57-FF8E45DC579D}|StayZee.Infrastucture\\StayZee.Infrastructure.csproj|c:\\users\\gisha\\desktop\\final24\\stayzee\\stayzee.infrastucture\\repostory\\bookingrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E9A88442-B2B1-4C0B-8C57-FF8E45DC579D}|StayZee.Infrastucture\\StayZee.Infrastructure.csproj|solutionrelative:stayzee.infrastucture\\repostory\\bookingrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EBB9D7BC-200F-480F-9D9E-F20D656603C7}|StayZee.Domain\\StayZee.Domain.csproj|c:\\users\\gisha\\desktop\\final24\\stayzee\\stayzee.domain\\entities\\homedocument.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EBB9D7BC-200F-480F-9D9E-F20D656603C7}|StayZee.Domain\\StayZee.Domain.csproj|solutionrelative:stayzee.domain\\entities\\homedocument.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B674CCDB-81CE-4951-BFDC-790861BDDE00}|StayZee.Appilication\\StayZee.Application.csproj|c:\\users\\gisha\\desktop\\final24\\stayzee\\stayzee.appilication\\interfaces\\iservices\\ipropertyserivice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B674CCDB-81CE-4951-BFDC-790861BDDE00}|StayZee.Appilication\\StayZee.Application.csproj|solutionrelative:stayzee.appilication\\interfaces\\iservices\\ipropertyserivice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E9A88442-B2B1-4C0B-8C57-FF8E45DC579D}|StayZee.Infrastucture\\StayZee.Infrastructure.csproj|c:\\users\\gisha\\desktop\\final24\\stayzee\\stayzee.infrastucture\\migrations\\20251203210203_propertyfixed_final.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E9A88442-B2B1-4C0B-8C57-FF8E45DC579D}|StayZee.Infrastucture\\StayZee.Infrastructure.csproj|solutionrelative:stayzee.infrastucture\\migrations\\20251203210203_propertyfixed_final.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E9A88442-B2B1-4C0B-8C57-FF8E45DC579D}|StayZee.Infrastucture\\StayZee.Infrastructure.csproj|c:\\users\\gisha\\desktop\\final24\\stayzee\\stayzee.infrastucture\\repostory\\cloudservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E9A88442-B2B1-4C0B-8C57-FF8E45DC579D}|StayZee.Infrastucture\\StayZee.Infrastructure.csproj|solutionrelative:stayzee.infrastucture\\repostory\\cloudservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E9A88442-B2B1-4C0B-8C57-FF8E45DC579D}|StayZee.Infrastucture\\StayZee.Infrastructure.csproj|c:\\users\\gisha\\desktop\\final24\\stayzee\\stayzee.infrastucture\\migrations\\20251207070143_addisblockedcolumnonly.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E9A88442-B2B1-4C0B-8C57-FF8E45DC579D}|StayZee.Infrastucture\\StayZee.Infrastructure.csproj|solutionrelative:stayzee.infrastucture\\migrations\\20251207070143_addisblockedcolumnonly.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E9A88442-B2B1-4C0B-8C57-FF8E45DC579D}|StayZee.Infrastucture\\StayZee.Infrastructure.csproj|c:\\users\\gisha\\desktop\\final24\\stayzee\\stayzee.infrastucture\\migrations\\20251207070143_addisblockedcolumnonly.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E9A88442-B2B1-4C0B-8C57-FF8E45DC579D}|StayZee.Infrastucture\\StayZee.Infrastructure.csproj|solutionrelative:stayzee.infrastucture\\migrations\\20251207070143_addisblockedcolumnonly.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E9A88442-B2B1-4C0B-8C57-FF8E45DC579D}|StayZee.Infrastucture\\StayZee.Infrastructure.csproj|c:\\users\\gisha\\desktop\\final24\\stayzee\\stayzee.infrastucture\\repostory\\homerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E9A88442-B2B1-4C0B-8C57-FF8E45DC579D}|StayZee.Infrastucture\\StayZee.Infrastructure.csproj|solutionrelative:stayzee.infrastucture\\repostory\\homerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B674CCDB-81CE-4951-BFDC-790861BDDE00}|StayZee.Appilication\\StayZee.Application.csproj|c:\\users\\gisha\\desktop\\final24\\stayzee\\stayzee.appilication\\interfaces\\irepository\\iuserrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B674CCDB-81CE-4951-BFDC-790861BDDE00}|StayZee.Appilication\\StayZee.Application.csproj|solutionrelative:stayzee.appilication\\interfaces\\irepository\\iuserrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B674CCDB-81CE-4951-BFDC-790861BDDE00}|StayZee.Appilication\\StayZee.Application.csproj|c:\\users\\gisha\\desktop\\final24\\stayzee\\stayzee.appilication\\interfaces\\iservices\\icloudservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B674CCDB-81CE-4951-BFDC-790861BDDE00}|StayZee.Appilication\\StayZee.Application.csproj|solutionrelative:stayzee.appilication\\interfaces\\iservices\\icloudservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B674CCDB-81CE-4951-BFDC-790861BDDE00}|StayZee.Appilication\\StayZee.Application.csproj|c:\\users\\gisha\\desktop\\final24\\stayzee\\stayzee.appilication\\interfaces\\iservices\\ibookingservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B674CCDB-81CE-4951-BFDC-790861BDDE00}|StayZee.Appilication\\StayZee.Application.csproj|solutionrelative:stayzee.appilication\\interfaces\\iservices\\ibookingservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B674CCDB-81CE-4951-BFDC-790861BDDE00}|StayZee.Appilication\\StayZee.Application.csproj|c:\\users\\gisha\\desktop\\final24\\stayzee\\stayzee.appilication\\services\\adminservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B674CCDB-81CE-4951-BFDC-790861BDDE00}|StayZee.Appilication\\StayZee.Application.csproj|solutionrelative:stayzee.appilication\\services\\adminservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B674CCDB-81CE-4951-BFDC-790861BDDE00}|StayZee.Appilication\\StayZee.Application.csproj|c:\\users\\gisha\\desktop\\final24\\stayzee\\stayzee.appilication\\interfaces\\irepository\\irentalrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B674CCDB-81CE-4951-BFDC-790861BDDE00}|StayZee.Appilication\\StayZee.Application.csproj|solutionrelative:stayzee.appilication\\interfaces\\irepository\\irentalrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D51D96ED-D773-4C31-8026-A8A36E9B2B54}|StayZee.Web\\StayZee.Web.csproj|c:\\users\\gisha\\desktop\\final24\\stayzee\\stayzee.web\\controllers\\customercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D51D96ED-D773-4C31-8026-A8A36E9B2B54}|StayZee.Web\\StayZee.Web.csproj|solutionrelative:stayzee.web\\controllers\\customercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B674CCDB-81CE-4951-BFDC-790861BDDE00}|StayZee.Appilication\\StayZee.Application.csproj|c:\\users\\gisha\\desktop\\final24\\stayzee\\stayzee.appilication\\dtos\\requestdto\\homerequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B674CCDB-81CE-4951-BFDC-790861BDDE00}|StayZee.Appilication\\StayZee.Application.csproj|solutionrelative:stayzee.appilication\\dtos\\requestdto\\homerequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B674CCDB-81CE-4951-BFDC-790861BDDE00}|StayZee.Appilication\\StayZee.Application.csproj|c:\\users\\gisha\\desktop\\final24\\stayzee\\stayzee.appilication\\services\\bookingservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B674CCDB-81CE-4951-BFDC-790861BDDE00}|StayZee.Appilication\\StayZee.Application.csproj|solutionrelative:stayzee.appilication\\services\\bookingservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B674CCDB-81CE-4951-BFDC-790861BDDE00}|StayZee.Appilication\\StayZee.Application.csproj|c:\\users\\gisha\\desktop\\final24\\stayzee\\stayzee.appilication\\dtos\\requestdto\\bookingrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B674CCDB-81CE-4951-BFDC-790861BDDE00}|StayZee.Appilication\\StayZee.Application.csproj|solutionrelative:stayzee.appilication\\dtos\\requestdto\\bookingrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B674CCDB-81CE-4951-BFDC-790861BDDE00}|StayZee.Appilication\\StayZee.Application.csproj|c:\\users\\gisha\\desktop\\final24\\stayzee\\stayzee.appilication\\interfaces\\irepository\\ibookingrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B674CCDB-81CE-4951-BFDC-790861BDDE00}|StayZee.Appilication\\StayZee.Application.csproj|solutionrelative:stayzee.appilication\\interfaces\\irepository\\ibookingrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B674CCDB-81CE-4951-BFDC-790861BDDE00}|StayZee.Appilication\\StayZee.Application.csproj|c:\\users\\gisha\\desktop\\final24\\stayzee\\stayzee.appilication\\services\\customerservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B674CCDB-81CE-4951-BFDC-790861BDDE00}|StayZee.Appilication\\StayZee.Application.csproj|solutionrelative:stayzee.appilication\\services\\customerservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B674CCDB-81CE-4951-BFDC-790861BDDE00}|StayZee.Appilication\\StayZee.Application.csproj|c:\\users\\gisha\\desktop\\final24\\stayzee\\stayzee.appilication\\services\\bookingstatusservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B674CCDB-81CE-4951-BFDC-790861BDDE00}|StayZee.Appilication\\StayZee.Application.csproj|solutionrelative:stayzee.appilication\\services\\bookingstatusservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B674CCDB-81CE-4951-BFDC-790861BDDE00}|StayZee.Appilication\\StayZee.Application.csproj|c:\\users\\gisha\\desktop\\final24\\stayzee\\stayzee.appilication\\services\\homepageservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B674CCDB-81CE-4951-BFDC-790861BDDE00}|StayZee.Appilication\\StayZee.Application.csproj|solutionrelative:stayzee.appilication\\services\\homepageservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B674CCDB-81CE-4951-BFDC-790861BDDE00}|StayZee.Appilication\\StayZee.Application.csproj|c:\\users\\gisha\\desktop\\final24\\stayzee\\stayzee.appilication\\services\\propertyservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B674CCDB-81CE-4951-BFDC-790861BDDE00}|StayZee.Appilication\\StayZee.Application.csproj|solutionrelative:stayzee.appilication\\services\\propertyservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E9A88442-B2B1-4C0B-8C57-FF8E45DC579D}|StayZee.Infrastucture\\StayZee.Infrastructure.csproj|c:\\users\\gisha\\desktop\\final24\\stayzee\\stayzee.infrastucture\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E9A88442-B2B1-4C0B-8C57-FF8E45DC579D}|StayZee.Infrastucture\\StayZee.Infrastructure.csproj|solutionrelative:stayzee.infrastucture\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E9A88442-B2B1-4C0B-8C57-FF8E45DC579D}|StayZee.Infrastucture\\StayZee.Infrastructure.csproj|c:\\users\\gisha\\desktop\\final24\\stayzee\\stayzee.infrastucture\\stayzee.infrastructure.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{E9A88442-B2B1-4C0B-8C57-FF8E45DC579D}|StayZee.Infrastucture\\StayZee.Infrastructure.csproj|solutionrelative:stayzee.infrastucture\\stayzee.infrastructure.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B674CCDB-81CE-4951-BFDC-790861BDDE00}|StayZee.Appilication\\StayZee.Application.csproj|c:\\users\\gisha\\desktop\\final24\\stayzee\\stayzee.appilication\\services\\homeapporovalstatusservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B674CCDB-81CE-4951-BFDC-790861BDDE00}|StayZee.Appilication\\StayZee.Application.csproj|solutionrelative:stayzee.appilication\\services\\homeapporovalstatusservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B674CCDB-81CE-4951-BFDC-790861BDDE00}|StayZee.Appilication\\StayZee.Application.csproj|c:\\users\\gisha\\desktop\\final24\\stayzee\\stayzee.appilication\\dtos\\requestdto\\bookingstatusrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B674CCDB-81CE-4951-BFDC-790861BDDE00}|StayZee.Appilication\\StayZee.Application.csproj|solutionrelative:stayzee.appilication\\dtos\\requestdto\\bookingstatusrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B674CCDB-81CE-4951-BFDC-790861BDDE00}|StayZee.Appilication\\StayZee.Application.csproj|c:\\users\\gisha\\desktop\\final24\\stayzee\\stayzee.appilication\\dtos\\requestdto\\createrentalrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B674CCDB-81CE-4951-BFDC-790861BDDE00}|StayZee.Appilication\\StayZee.Application.csproj|solutionrelative:stayzee.appilication\\dtos\\requestdto\\createrentalrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B674CCDB-81CE-4951-BFDC-790861BDDE00}|StayZee.Appilication\\StayZee.Application.csproj|c:\\users\\gisha\\desktop\\final24\\stayzee\\stayzee.appilication\\services\\homeservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B674CCDB-81CE-4951-BFDC-790861BDDE00}|StayZee.Appilication\\StayZee.Application.csproj|solutionrelative:stayzee.appilication\\services\\homeservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B674CCDB-81CE-4951-BFDC-790861BDDE00}|StayZee.Appilication\\StayZee.Application.csproj|c:\\users\\gisha\\desktop\\final24\\stayzee\\stayzee.appilication\\interfaces\\irepository\\ipaymentstatusrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B674CCDB-81CE-4951-BFDC-790861BDDE00}|StayZee.Appilication\\StayZee.Application.csproj|solutionrelative:stayzee.appilication\\interfaces\\irepository\\ipaymentstatusrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E9A88442-B2B1-4C0B-8C57-FF8E45DC579D}|StayZee.Infrastucture\\StayZee.Infrastructure.csproj|c:\\users\\gisha\\desktop\\final24\\stayzee\\stayzee.infrastucture\\repostory\\bookingstatusrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E9A88442-B2B1-4C0B-8C57-FF8E45DC579D}|StayZee.Infrastucture\\StayZee.Infrastructure.csproj|solutionrelative:stayzee.infrastucture\\repostory\\bookingstatusrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D51D96ED-D773-4C31-8026-A8A36E9B2B54}|StayZee.Web\\StayZee.Web.csproj|c:\\users\\gisha\\desktop\\final24\\stayzee\\stayzee.web\\controllers\\bookingstatuscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D51D96ED-D773-4C31-8026-A8A36E9B2B54}|StayZee.Web\\StayZee.Web.csproj|solutionrelative:stayzee.web\\controllers\\bookingstatuscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B674CCDB-81CE-4951-BFDC-790861BDDE00}|StayZee.Appilication\\StayZee.Application.csproj|c:\\users\\gisha\\desktop\\final24\\stayzee\\stayzee.appilication\\interfaces\\irepository\\ibookingstatusrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B674CCDB-81CE-4951-BFDC-790861BDDE00}|StayZee.Appilication\\StayZee.Application.csproj|solutionrelative:stayzee.appilication\\interfaces\\irepository\\ibookingstatusrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B674CCDB-81CE-4951-BFDC-790861BDDE00}|StayZee.Appilication\\StayZee.Application.csproj|c:\\users\\gisha\\desktop\\final24\\stayzee\\stayzee.appilication\\interfaces\\iservices\\ihomeapporovalstatusservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B674CCDB-81CE-4951-BFDC-790861BDDE00}|StayZee.Appilication\\StayZee.Application.csproj|solutionrelative:stayzee.appilication\\interfaces\\iservices\\ihomeapporovalstatusservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E9A88442-B2B1-4C0B-8C57-FF8E45DC579D}|StayZee.Infrastucture\\StayZee.Infrastructure.csproj|c:\\users\\gisha\\desktop\\final24\\stayzee\\stayzee.infrastucture\\repostory\\homeapporovalstatusrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E9A88442-B2B1-4C0B-8C57-FF8E45DC579D}|StayZee.Infrastucture\\StayZee.Infrastructure.csproj|solutionrelative:stayzee.infrastucture\\repostory\\homeapporovalstatusrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B674CCDB-81CE-4951-BFDC-790861BDDE00}|StayZee.Appilication\\StayZee.Application.csproj|c:\\users\\gisha\\desktop\\final24\\stayzee\\stayzee.appilication\\interfaces\\irepository\\ihomeapporovalstatusrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B674CCDB-81CE-4951-BFDC-790861BDDE00}|StayZee.Appilication\\StayZee.Application.csproj|solutionrelative:stayzee.appilication\\interfaces\\irepository\\ihomeapporovalstatusrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E9A88442-B2B1-4C0B-8C57-FF8E45DC579D}|StayZee.Infrastucture\\StayZee.Infrastructure.csproj|c:\\users\\gisha\\desktop\\final24\\stayzee\\stayzee.infrastucture\\repostory\\propertyrepositary.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E9A88442-B2B1-4C0B-8C57-FF8E45DC579D}|StayZee.Infrastucture\\StayZee.Infrastructure.csproj|solutionrelative:stayzee.infrastucture\\repostory\\propertyrepositary.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EBB9D7BC-200F-480F-9D9E-F20D656603C7}|StayZee.Domain\\StayZee.Domain.csproj|c:\\users\\gisha\\desktop\\final24\\stayzee\\stayzee.domain\\entities\\homeapprovalstatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EBB9D7BC-200F-480F-9D9E-F20D656603C7}|StayZee.Domain\\StayZee.Domain.csproj|solutionrelative:stayzee.domain\\entities\\homeapprovalstatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B674CCDB-81CE-4951-BFDC-790861BDDE00}|StayZee.Appilication\\StayZee.Application.csproj|c:\\users\\gisha\\desktop\\final24\\stayzee\\stayzee.appilication\\interfaces\\irepository\\ihomerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B674CCDB-81CE-4951-BFDC-790861BDDE00}|StayZee.Appilication\\StayZee.Application.csproj|solutionrelative:stayzee.appilication\\interfaces\\irepository\\ihomerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EBB9D7BC-200F-480F-9D9E-F20D656603C7}|StayZee.Domain\\StayZee.Domain.csproj|c:\\users\\gisha\\desktop\\final24\\stayzee\\stayzee.domain\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EBB9D7BC-200F-480F-9D9E-F20D656603C7}|StayZee.Domain\\StayZee.Domain.csproj|solutionrelative:stayzee.domain\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B674CCDB-81CE-4951-BFDC-790861BDDE00}|StayZee.Appilication\\StayZee.Application.csproj|c:\\users\\gisha\\desktop\\final24\\stayzee\\stayzee.appilication\\interfaces\\iservices\\iauthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B674CCDB-81CE-4951-BFDC-790861BDDE00}|StayZee.Appilication\\StayZee.Application.csproj|solutionrelative:stayzee.appilication\\interfaces\\iservices\\iauthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B674CCDB-81CE-4951-BFDC-790861BDDE00}|StayZee.Appilication\\StayZee.Application.csproj|c:\\users\\gisha\\desktop\\final24\\stayzee\\stayzee.appilication\\interfaces\\iservices\\ibookingstatusservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B674CCDB-81CE-4951-BFDC-790861BDDE00}|StayZee.Appilication\\StayZee.Application.csproj|solutionrelative:stayzee.appilication\\interfaces\\iservices\\ibookingstatusservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B674CCDB-81CE-4951-BFDC-790861BDDE00}|StayZee.Appilication\\StayZee.Application.csproj|c:\\users\\gisha\\desktop\\final24\\stayzee\\stayzee.appilication\\interfaces\\iservices\\iadminservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B674CCDB-81CE-4951-BFDC-790861BDDE00}|StayZee.Appilication\\StayZee.Application.csproj|solutionrelative:stayzee.appilication\\interfaces\\iservices\\iadminservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 6,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "HomepageController.cs",
+              "DocumentMoniker": "C:\\Users\\gisha\\Desktop\\final24\\Stayzee\\StayZee.Web\\Controllers\\HomepageController.cs",
+              "RelativeDocumentMoniker": "StayZee.Web\\Controllers\\HomepageController.cs",
+              "ToolTip": "C:\\Users\\gisha\\Desktop\\final24\\Stayzee\\StayZee.Web\\Controllers\\HomepageController.cs",
+              "RelativeToolTip": "StayZee.Web\\Controllers\\HomepageController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-08T08:34:19.759Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "C:\\Users\\gisha\\Desktop\\final24\\Stayzee\\StayZee.Web\\Controllers\\AuthController.cs",
+              "RelativeDocumentMoniker": "StayZee.Web\\Controllers\\AuthController.cs",
+              "ToolTip": "C:\\Users\\gisha\\Desktop\\final24\\Stayzee\\StayZee.Web\\Controllers\\AuthController.cs",
+              "RelativeToolTip": "StayZee.Web\\Controllers\\AuthController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-06T14:01:07.422Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "BookingController.cs",
+              "DocumentMoniker": "C:\\Users\\gisha\\Desktop\\final24\\Stayzee\\StayZee.Web\\Controllers\\BookingController.cs",
+              "RelativeDocumentMoniker": "StayZee.Web\\Controllers\\BookingController.cs",
+              "ToolTip": "C:\\Users\\gisha\\Desktop\\final24\\Stayzee\\StayZee.Web\\Controllers\\BookingController.cs",
+              "RelativeToolTip": "StayZee.Web\\Controllers\\BookingController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-06T14:03:59.097Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AdminController.cs",
+              "DocumentMoniker": "C:\\Users\\gisha\\Desktop\\final24\\Stayzee\\StayZee.Web\\Controllers\\AdminController.cs",
+              "RelativeDocumentMoniker": "StayZee.Web\\Controllers\\AdminController.cs",
+              "ToolTip": "C:\\Users\\gisha\\Desktop\\final24\\Stayzee\\StayZee.Web\\Controllers\\AdminController.cs",
+              "RelativeToolTip": "StayZee.Web\\Controllers\\AdminController.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAxwAoAAABoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-04T03:18:43.959Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\gisha\\Desktop\\final24\\Stayzee\\StayZee.Web\\appsettings.json",
+              "RelativeDocumentMoniker": "StayZee.Web\\appsettings.json",
+              "ToolTip": "C:\\Users\\gisha\\Desktop\\final24\\Stayzee\\StayZee.Web\\appsettings.json",
+              "RelativeToolTip": "StayZee.Web\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-12-04T02:55:08.633Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AuthService.cs",
+              "DocumentMoniker": "C:\\Users\\gisha\\Desktop\\final24\\Stayzee\\StayZee.Appilication\\Services\\AuthService.cs",
+              "RelativeDocumentMoniker": "StayZee.Appilication\\Services\\AuthService.cs",
+              "ToolTip": "C:\\Users\\gisha\\Desktop\\final24\\Stayzee\\StayZee.Appilication\\Services\\AuthService.cs",
+              "RelativeToolTip": "StayZee.Appilication\\Services\\AuthService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACIAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-06T13:41:15.545Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Propertycontroller.cs",
+              "DocumentMoniker": "C:\\Users\\gisha\\Desktop\\final24\\Stayzee\\StayZee.Web\\Controllers\\Propertycontroller.cs",
+              "RelativeDocumentMoniker": "StayZee.Web\\Controllers\\Propertycontroller.cs",
+              "ToolTip": "C:\\Users\\gisha\\Desktop\\final24\\Stayzee\\StayZee.Web\\Controllers\\Propertycontroller.cs",
+              "RelativeToolTip": "StayZee.Web\\Controllers\\Propertycontroller.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABsAAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-08T08:34:07.686Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "IPropertySerivice.cs",
+              "DocumentMoniker": "C:\\Users\\gisha\\Desktop\\final24\\Stayzee\\StayZee.Appilication\\Interfaces\\Iservices\\IPropertySerivice.cs",
+              "RelativeDocumentMoniker": "StayZee.Appilication\\Interfaces\\Iservices\\IPropertySerivice.cs",
+              "ToolTip": "C:\\Users\\gisha\\Desktop\\final24\\Stayzee\\StayZee.Appilication\\Interfaces\\Iservices\\IPropertySerivice.cs",
+              "RelativeToolTip": "StayZee.Appilication\\Interfaces\\Iservices\\IPropertySerivice.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAjwA0AAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-08T07:03:36.329Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\gisha\\Desktop\\final24\\Stayzee\\StayZee.Web\\Program.cs",
+              "RelativeDocumentMoniker": "StayZee.Web\\Program.cs",
+              "ToolTip": "C:\\Users\\gisha\\Desktop\\final24\\Stayzee\\StayZee.Web\\Program.cs",
+              "RelativeToolTip": "StayZee.Web\\Program.cs",
+              "ViewState": "AgIAADAAAAAAAAAAAAAAABMAAABUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-04T02:47:19.722Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "ICustomerRepository.cs",
+              "DocumentMoniker": "C:\\Users\\gisha\\Desktop\\final24\\Stayzee\\StayZee.Appilication\\Interfaces\\IRepository\\ICustomerRepository.cs",
+              "RelativeDocumentMoniker": "StayZee.Appilication\\Interfaces\\IRepository\\ICustomerRepository.cs",
+              "ToolTip": "C:\\Users\\gisha\\Desktop\\final24\\Stayzee\\StayZee.Appilication\\Interfaces\\IRepository\\ICustomerRepository.cs",
+              "RelativeToolTip": "StayZee.Appilication\\Interfaces\\IRepository\\ICustomerRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-07T00:51:34.633Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "UserRepository.cs",
+              "DocumentMoniker": "C:\\Users\\gisha\\Desktop\\final24\\Stayzee\\StayZee.Infrastucture\\Repostory\\UserRepository.cs",
+              "RelativeDocumentMoniker": "StayZee.Infrastucture\\Repostory\\UserRepository.cs",
+              "ToolTip": "C:\\Users\\gisha\\Desktop\\final24\\Stayzee\\StayZee.Infrastucture\\Repostory\\UserRepository.cs",
+              "RelativeToolTip": "StayZee.Infrastucture\\Repostory\\UserRepository.cs",
+              "ViewState": "AgIAAC4AAAAAAAAAAAAmwDMAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-04T04:02:42.825Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "BookingRepository.cs",
+              "DocumentMoniker": "C:\\Users\\gisha\\Desktop\\final24\\Stayzee\\StayZee.Infrastucture\\Repostory\\BookingRepository.cs",
+              "RelativeDocumentMoniker": "StayZee.Infrastucture\\Repostory\\BookingRepository.cs",
+              "ToolTip": "C:\\Users\\gisha\\Desktop\\final24\\Stayzee\\StayZee.Infrastucture\\Repostory\\BookingRepository.cs",
+              "RelativeToolTip": "StayZee.Infrastucture\\Repostory\\BookingRepository.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-05T03:12:11.09Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "StayZee.Web.http",
+              "DocumentMoniker": "C:\\Users\\gisha\\Desktop\\final24\\Stayzee\\StayZee.Web\\StayZee.Web.http",
+              "RelativeDocumentMoniker": "StayZee.Web\\StayZee.Web.http",
+              "ToolTip": "C:\\Users\\gisha\\Desktop\\final24\\Stayzee\\StayZee.Web\\StayZee.Web.http",
+              "RelativeToolTip": "StayZee.Web\\StayZee.Web.http",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
+              "WhenOpened": "2025-12-04T02:50:05.383Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "HomeDocument.cs",
+              "DocumentMoniker": "C:\\Users\\gisha\\Desktop\\final24\\Stayzee\\StayZee.Domain\\Entities\\HomeDocument.cs",
+              "RelativeDocumentMoniker": "StayZee.Domain\\Entities\\HomeDocument.cs",
+              "ToolTip": "C:\\Users\\gisha\\Desktop\\final24\\Stayzee\\StayZee.Domain\\Entities\\HomeDocument.cs",
+              "RelativeToolTip": "StayZee.Domain\\Entities\\HomeDocument.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAjwA4AAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-08T07:03:37.511Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "20251207135255_UpdateBookingtable.cs",
+              "DocumentMoniker": "C:\\Users\\gisha\\Desktop\\final24\\Stayzee\\StayZee.Infrastucture\\Migrations\\20251207135255_UpdateBookingtable.cs",
+              "RelativeDocumentMoniker": "StayZee.Infrastucture\\Migrations\\20251207135255_UpdateBookingtable.cs",
+              "ToolTip": "C:\\Users\\gisha\\Desktop\\final24\\Stayzee\\StayZee.Infrastucture\\Migrations\\20251207135255_UpdateBookingtable.cs",
+              "RelativeToolTip": "StayZee.Infrastucture\\Migrations\\20251207135255_UpdateBookingtable.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-08T07:06:54.978Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "CustomerRepository.cs",
+              "DocumentMoniker": "C:\\Users\\gisha\\Desktop\\final24\\Stayzee\\StayZee.Infrastucture\\Repostory\\CustomerRepository.cs",
+              "RelativeDocumentMoniker": "StayZee.Infrastucture\\Repostory\\CustomerRepository.cs",
+              "ToolTip": "C:\\Users\\gisha\\Desktop\\final24\\Stayzee\\StayZee.Infrastucture\\Repostory\\CustomerRepository.cs",
+              "RelativeToolTip": "StayZee.Infrastucture\\Repostory\\CustomerRepository.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-07T00:53:01.207Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "20251203210203_PropertyFixed_Final.cs",
+              "DocumentMoniker": "C:\\Users\\gisha\\Desktop\\final24\\Stayzee\\StayZee.Infrastucture\\Migrations\\20251203210203_PropertyFixed_Final.cs",
+              "RelativeDocumentMoniker": "StayZee.Infrastucture\\Migrations\\20251203210203_PropertyFixed_Final.cs",
+              "ToolTip": "C:\\Users\\gisha\\Desktop\\final24\\Stayzee\\StayZee.Infrastucture\\Migrations\\20251203210203_PropertyFixed_Final.cs",
+              "RelativeToolTip": "StayZee.Infrastucture\\Migrations\\20251203210203_PropertyFixed_Final.cs",
+              "ViewState": "AgIAAIoAAAAAAAAAAAAAwJUAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-08T06:04:13.855Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "CloudService.cs",
+              "DocumentMoniker": "C:\\Users\\gisha\\Desktop\\final24\\Stayzee\\StayZee.Infrastucture\\Repostory\\CloudService.cs",
+              "RelativeDocumentMoniker": "StayZee.Infrastucture\\Repostory\\CloudService.cs",
+              "ToolTip": "C:\\Users\\gisha\\Desktop\\final24\\Stayzee\\StayZee.Infrastucture\\Repostory\\CloudService.cs",
+              "RelativeToolTip": "StayZee.Infrastucture\\Repostory\\CloudService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-05T03:12:21.088Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "20251207070143_AddIsBlockedColumnOnly.cs",
+              "DocumentMoniker": "C:\\Users\\gisha\\Desktop\\final24\\Stayzee\\StayZee.Infrastucture\\Migrations\\20251207070143_AddIsBlockedColumnOnly.cs",
+              "RelativeDocumentMoniker": "StayZee.Infrastucture\\Migrations\\20251207070143_AddIsBlockedColumnOnly.cs",
+              "ToolTip": "C:\\Users\\gisha\\Desktop\\final24\\Stayzee\\StayZee.Infrastucture\\Migrations\\20251207070143_AddIsBlockedColumnOnly.cs",
+              "RelativeToolTip": "StayZee.Infrastucture\\Migrations\\20251207070143_AddIsBlockedColumnOnly.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-08T05:58:31.883Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "20251207070143_AddIsBlockedColumnOnly.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\gisha\\Desktop\\final24\\Stayzee\\StayZee.Infrastucture\\Migrations\\20251207070143_AddIsBlockedColumnOnly.Designer.cs",
+              "RelativeDocumentMoniker": "StayZee.Infrastucture\\Migrations\\20251207070143_AddIsBlockedColumnOnly.Designer.cs",
+              "ToolTip": "C:\\Users\\gisha\\Desktop\\final24\\Stayzee\\StayZee.Infrastucture\\Migrations\\20251207070143_AddIsBlockedColumnOnly.Designer.cs",
+              "RelativeToolTip": "StayZee.Infrastucture\\Migrations\\20251207070143_AddIsBlockedColumnOnly.Designer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-08T06:04:17.795Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "HomeRepository.cs",
+              "DocumentMoniker": "C:\\Users\\gisha\\Desktop\\final24\\Stayzee\\StayZee.Infrastucture\\Repostory\\HomeRepository.cs",
+              "RelativeDocumentMoniker": "StayZee.Infrastucture\\Repostory\\HomeRepository.cs",
+              "ToolTip": "C:\\Users\\gisha\\Desktop\\final24\\Stayzee\\StayZee.Infrastucture\\Repostory\\HomeRepository.cs",
+              "RelativeToolTip": "StayZee.Infrastucture\\Repostory\\HomeRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-04T03:44:35.528Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "IUserRepository.cs",
+              "DocumentMoniker": "C:\\Users\\gisha\\Desktop\\final24\\Stayzee\\StayZee.Appilication\\Interfaces\\IRepository\\IUserRepository.cs",
+              "RelativeDocumentMoniker": "StayZee.Appilication\\Interfaces\\IRepository\\IUserRepository.cs",
+              "ToolTip": "C:\\Users\\gisha\\Desktop\\final24\\Stayzee\\StayZee.Appilication\\Interfaces\\IRepository\\IUserRepository.cs",
+              "RelativeToolTip": "StayZee.Appilication\\Interfaces\\IRepository\\IUserRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-04T03:22:40.424Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "ICloudService.cs",
+              "DocumentMoniker": "C:\\Users\\gisha\\Desktop\\final24\\Stayzee\\StayZee.Appilication\\Interfaces\\Iservices\\ICloudService.cs",
+              "RelativeDocumentMoniker": "StayZee.Appilication\\Interfaces\\Iservices\\ICloudService.cs",
+              "ToolTip": "C:\\Users\\gisha\\Desktop\\final24\\Stayzee\\StayZee.Appilication\\Interfaces\\Iservices\\ICloudService.cs",
+              "RelativeToolTip": "StayZee.Appilication\\Interfaces\\Iservices\\ICloudService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-07T05:27:39.194Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "IBookingservices.cs",
+              "DocumentMoniker": "C:\\Users\\gisha\\Desktop\\final24\\Stayzee\\StayZee.Appilication\\Interfaces\\Iservices\\IBookingservices.cs",
+              "RelativeDocumentMoniker": "StayZee.Appilication\\Interfaces\\Iservices\\IBookingservices.cs",
+              "ToolTip": "C:\\Users\\gisha\\Desktop\\final24\\Stayzee\\StayZee.Appilication\\Interfaces\\Iservices\\IBookingservices.cs",
+              "RelativeToolTip": "StayZee.Appilication\\Interfaces\\Iservices\\IBookingservices.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-04T03:43:59.124Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "AdminService.cs",
+              "DocumentMoniker": "C:\\Users\\gisha\\Desktop\\final24\\Stayzee\\StayZee.Appilication\\Services\\AdminService.cs",
+              "RelativeDocumentMoniker": "StayZee.Appilication\\Services\\AdminService.cs",
+              "ToolTip": "C:\\Users\\gisha\\Desktop\\final24\\Stayzee\\StayZee.Appilication\\Services\\AdminService.cs",
+              "RelativeToolTip": "StayZee.Appilication\\Services\\AdminService.cs",
+              "ViewState": "AgIAAEAAAAAAAAAAAAAUwGQAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-04T03:19:25.581Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "IRentalRepository.cs",
+              "DocumentMoniker": "C:\\Users\\gisha\\Desktop\\final24\\Stayzee\\StayZee.Appilication\\Interfaces\\IRepository\\IRentalRepository.cs",
+              "RelativeDocumentMoniker": "StayZee.Appilication\\Interfaces\\IRepository\\IRentalRepository.cs",
+              "ToolTip": "C:\\Users\\gisha\\Desktop\\final24\\Stayzee\\StayZee.Appilication\\Interfaces\\IRepository\\IRentalRepository.cs",
+              "RelativeToolTip": "StayZee.Appilication\\Interfaces\\IRepository\\IRentalRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-07T00:50:48.01Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "CustomerController.cs",
+              "DocumentMoniker": "C:\\Users\\gisha\\Desktop\\final24\\Stayzee\\StayZee.Web\\Controllers\\CustomerController.cs",
+              "RelativeDocumentMoniker": "StayZee.Web\\Controllers\\CustomerController.cs",
+              "ToolTip": "C:\\Users\\gisha\\Desktop\\final24\\Stayzee\\StayZee.Web\\Controllers\\CustomerController.cs",
+              "RelativeToolTip": "StayZee.Web\\Controllers\\CustomerController.cs",
+              "ViewState": "AgIAAEYAAAAAAAAAAAAwwAUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-07T02:03:34.721Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "HomeRequestDTO.cs",
+              "DocumentMoniker": "C:\\Users\\gisha\\Desktop\\final24\\Stayzee\\StayZee.Appilication\\DTOs\\RequestDTO\\HomeRequestDTO.cs",
+              "RelativeDocumentMoniker": "StayZee.Appilication\\DTOs\\RequestDTO\\HomeRequestDTO.cs",
+              "ToolTip": "C:\\Users\\gisha\\Desktop\\final24\\Stayzee\\StayZee.Appilication\\DTOs\\RequestDTO\\HomeRequestDTO.cs",
+              "RelativeToolTip": "StayZee.Appilication\\DTOs\\RequestDTO\\HomeRequestDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-07T00:52:17.607Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "BookingService.cs",
+              "DocumentMoniker": "C:\\Users\\gisha\\Desktop\\final24\\Stayzee\\StayZee.Appilication\\Services\\BookingService.cs",
+              "RelativeDocumentMoniker": "StayZee.Appilication\\Services\\BookingService.cs",
+              "ToolTip": "C:\\Users\\gisha\\Desktop\\final24\\Stayzee\\StayZee.Appilication\\Services\\BookingService.cs",
+              "RelativeToolTip": "StayZee.Appilication\\Services\\BookingService.cs",
+              "ViewState": "AgIAAFIAAAAAAAAAAAAkwA8AAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-05T03:24:34.282Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "BookingRequestDTO.cs",
+              "DocumentMoniker": "C:\\Users\\gisha\\Desktop\\final24\\Stayzee\\StayZee.Appilication\\DTOs\\RequestDTO\\BookingRequestDTO.cs",
+              "RelativeDocumentMoniker": "StayZee.Appilication\\DTOs\\RequestDTO\\BookingRequestDTO.cs",
+              "ToolTip": "C:\\Users\\gisha\\Desktop\\final24\\Stayzee\\StayZee.Appilication\\DTOs\\RequestDTO\\BookingRequestDTO.cs",
+              "RelativeToolTip": "StayZee.Appilication\\DTOs\\RequestDTO\\BookingRequestDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-05T03:23:31.171Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "IBookingRepository.cs",
+              "DocumentMoniker": "C:\\Users\\gisha\\Desktop\\final24\\Stayzee\\StayZee.Appilication\\Interfaces\\IRepository\\IBookingRepository.cs",
+              "RelativeDocumentMoniker": "StayZee.Appilication\\Interfaces\\IRepository\\IBookingRepository.cs",
+              "ToolTip": "C:\\Users\\gisha\\Desktop\\final24\\Stayzee\\StayZee.Appilication\\Interfaces\\IRepository\\IBookingRepository.cs",
+              "RelativeToolTip": "StayZee.Appilication\\Interfaces\\IRepository\\IBookingRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-05T03:10:01.79Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "CustomerServices.cs",
+              "DocumentMoniker": "C:\\Users\\gisha\\Desktop\\final24\\Stayzee\\StayZee.Appilication\\Services\\CustomerServices.cs",
+              "RelativeDocumentMoniker": "StayZee.Appilication\\Services\\CustomerServices.cs",
+              "ToolTip": "C:\\Users\\gisha\\Desktop\\final24\\Stayzee\\StayZee.Appilication\\Services\\CustomerServices.cs",
+              "RelativeToolTip": "StayZee.Appilication\\Services\\CustomerServices.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-06T13:41:42.04Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "BookingStatusServices.cs",
+              "DocumentMoniker": "C:\\Users\\gisha\\Desktop\\final24\\Stayzee\\StayZee.Appilication\\Services\\BookingStatusServices.cs",
+              "RelativeDocumentMoniker": "StayZee.Appilication\\Services\\BookingStatusServices.cs",
+              "ToolTip": "C:\\Users\\gisha\\Desktop\\final24\\Stayzee\\StayZee.Appilication\\Services\\BookingStatusServices.cs",
+              "RelativeToolTip": "StayZee.Appilication\\Services\\BookingStatusServices.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-05T03:27:42.097Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "HomepageService.cs",
+              "DocumentMoniker": "C:\\Users\\gisha\\Desktop\\final24\\Stayzee\\StayZee.Appilication\\Services\\HomepageService.cs",
+              "RelativeDocumentMoniker": "StayZee.Appilication\\Services\\HomepageService.cs",
+              "ToolTip": "C:\\Users\\gisha\\Desktop\\final24\\Stayzee\\StayZee.Appilication\\Services\\HomepageService.cs",
+              "RelativeToolTip": "StayZee.Appilication\\Services\\HomepageService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-06T13:41:57.267Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "PropertyServices.cs",
+              "DocumentMoniker": "C:\\Users\\gisha\\Desktop\\final24\\Stayzee\\StayZee.Appilication\\Services\\PropertyServices.cs",
+              "RelativeDocumentMoniker": "StayZee.Appilication\\Services\\PropertyServices.cs",
+              "ToolTip": "C:\\Users\\gisha\\Desktop\\final24\\Stayzee\\StayZee.Appilication\\Services\\PropertyServices.cs",
+              "RelativeToolTip": "StayZee.Appilication\\Services\\PropertyServices.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-06T13:41:50.271Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "AppDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\gisha\\Desktop\\final24\\Stayzee\\StayZee.Infrastucture\\Data\\AppDbContext.cs",
+              "RelativeDocumentMoniker": "StayZee.Infrastucture\\Data\\AppDbContext.cs",
+              "ToolTip": "C:\\Users\\gisha\\Desktop\\final24\\Stayzee\\StayZee.Infrastucture\\Data\\AppDbContext.cs",
+              "RelativeToolTip": "StayZee.Infrastucture\\Data\\AppDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAABLAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-04T03:36:11.175Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "StayZee.Infrastructure.csproj",
+              "DocumentMoniker": "C:\\Users\\gisha\\Desktop\\final24\\Stayzee\\StayZee.Infrastucture\\StayZee.Infrastructure.csproj",
+              "RelativeDocumentMoniker": "StayZee.Infrastucture\\StayZee.Infrastructure.csproj",
+              "ToolTip": "C:\\Users\\gisha\\Desktop\\final24\\Stayzee\\StayZee.Infrastucture\\StayZee.Infrastructure.csproj",
+              "RelativeToolTip": "StayZee.Infrastucture\\StayZee.Infrastructure.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-12-06T13:37:05.395Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "HomeApporovalStatusServices.cs",
+              "DocumentMoniker": "C:\\Users\\gisha\\Desktop\\final24\\Stayzee\\StayZee.Appilication\\Services\\HomeApporovalStatusServices.cs",
+              "RelativeDocumentMoniker": "StayZee.Appilication\\Services\\HomeApporovalStatusServices.cs",
+              "ToolTip": "C:\\Users\\gisha\\Desktop\\final24\\Stayzee\\StayZee.Appilication\\Services\\HomeApporovalStatusServices.cs",
+              "RelativeToolTip": "StayZee.Appilication\\Services\\HomeApporovalStatusServices.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-04T04:28:08.06Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
+              "Title": "BookingStatusRequestDTO.cs",
+              "DocumentMoniker": "C:\\Users\\gisha\\Desktop\\final24\\Stayzee\\StayZee.Appilication\\DTOs\\RequestDTO\\BookingStatusRequestDTO.cs",
+              "RelativeDocumentMoniker": "StayZee.Appilication\\DTOs\\RequestDTO\\BookingStatusRequestDTO.cs",
+              "ToolTip": "C:\\Users\\gisha\\Desktop\\final24\\Stayzee\\StayZee.Appilication\\DTOs\\RequestDTO\\BookingStatusRequestDTO.cs",
+              "RelativeToolTip": "StayZee.Appilication\\DTOs\\RequestDTO\\BookingStatusRequestDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-05T03:23:38.109Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 39,
+              "Title": "CreateRentalRequest.cs",
+              "DocumentMoniker": "C:\\Users\\gisha\\Desktop\\final24\\Stayzee\\StayZee.Appilication\\DTOs\\RequestDTO\\CreateRentalRequest.cs",
+              "RelativeDocumentMoniker": "StayZee.Appilication\\DTOs\\RequestDTO\\CreateRentalRequest.cs",
+              "ToolTip": "C:\\Users\\gisha\\Desktop\\final24\\Stayzee\\StayZee.Appilication\\DTOs\\RequestDTO\\CreateRentalRequest.cs",
+              "RelativeToolTip": "StayZee.Appilication\\DTOs\\RequestDTO\\CreateRentalRequest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-05T03:23:41.715Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 40,
+              "Title": "HomeServices.cs",
+              "DocumentMoniker": "C:\\Users\\gisha\\Desktop\\final24\\Stayzee\\StayZee.Appilication\\Services\\HomeServices.cs",
+              "RelativeDocumentMoniker": "StayZee.Appilication\\Services\\HomeServices.cs",
+              "ToolTip": "C:\\Users\\gisha\\Desktop\\final24\\Stayzee\\StayZee.Appilication\\Services\\HomeServices.cs",
+              "RelativeToolTip": "StayZee.Appilication\\Services\\HomeServices.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-05T03:28:18.89Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 41,
+              "Title": "IPaymentStatusRepository.cs",
+              "DocumentMoniker": "C:\\Users\\gisha\\Desktop\\final24\\Stayzee\\StayZee.Appilication\\Interfaces\\IRepository\\IPaymentStatusRepository.cs",
+              "RelativeDocumentMoniker": "StayZee.Appilication\\Interfaces\\IRepository\\IPaymentStatusRepository.cs",
+              "ToolTip": "C:\\Users\\gisha\\Desktop\\final24\\Stayzee\\StayZee.Appilication\\Interfaces\\IRepository\\IPaymentStatusRepository.cs",
+              "RelativeToolTip": "StayZee.Appilication\\Interfaces\\IRepository\\IPaymentStatusRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-05T03:21:47.835Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 42,
+              "Title": "BookingStatusRepository.cs",
+              "DocumentMoniker": "C:\\Users\\gisha\\Desktop\\final24\\Stayzee\\StayZee.Infrastucture\\Repostory\\BookingStatusRepository.cs",
+              "RelativeDocumentMoniker": "StayZee.Infrastucture\\Repostory\\BookingStatusRepository.cs",
+              "ToolTip": "C:\\Users\\gisha\\Desktop\\final24\\Stayzee\\StayZee.Infrastucture\\Repostory\\BookingStatusRepository.cs",
+              "RelativeToolTip": "StayZee.Infrastucture\\Repostory\\BookingStatusRepository.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-05T03:12:12.602Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 43,
+              "Title": "BookingStatusController.cs",
+              "DocumentMoniker": "C:\\Users\\gisha\\Desktop\\final24\\Stayzee\\StayZee.Web\\Controllers\\BookingStatusController.cs",
+              "RelativeDocumentMoniker": "StayZee.Web\\Controllers\\BookingStatusController.cs",
+              "ToolTip": "C:\\Users\\gisha\\Desktop\\final24\\Stayzee\\StayZee.Web\\Controllers\\BookingStatusController.cs",
+              "RelativeToolTip": "StayZee.Web\\Controllers\\BookingStatusController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-05T03:11:41.575Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 44,
+              "Title": "IBookingStatusRepository.cs",
+              "DocumentMoniker": "C:\\Users\\gisha\\Desktop\\final24\\Stayzee\\StayZee.Appilication\\Interfaces\\IRepository\\IBookingStatusRepository.cs",
+              "RelativeDocumentMoniker": "StayZee.Appilication\\Interfaces\\IRepository\\IBookingStatusRepository.cs",
+              "ToolTip": "C:\\Users\\gisha\\Desktop\\final24\\Stayzee\\StayZee.Appilication\\Interfaces\\IRepository\\IBookingStatusRepository.cs",
+              "RelativeToolTip": "StayZee.Appilication\\Interfaces\\IRepository\\IBookingStatusRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-05T03:11:12.751Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 45,
+              "Title": "IHomeApporovalStatusservices.cs",
+              "DocumentMoniker": "C:\\Users\\gisha\\Desktop\\final24\\Stayzee\\StayZee.Appilication\\Interfaces\\Iservices\\IHomeApporovalStatusservices.cs",
+              "RelativeDocumentMoniker": "StayZee.Appilication\\Interfaces\\Iservices\\IHomeApporovalStatusservices.cs",
+              "ToolTip": "C:\\Users\\gisha\\Desktop\\final24\\Stayzee\\StayZee.Appilication\\Interfaces\\Iservices\\IHomeApporovalStatusservices.cs",
+              "RelativeToolTip": "StayZee.Appilication\\Interfaces\\Iservices\\IHomeApporovalStatusservices.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-04T03:44:14.401Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 46,
+              "Title": "HomeApporovalStatusRepository.cs",
+              "DocumentMoniker": "C:\\Users\\gisha\\Desktop\\final24\\Stayzee\\StayZee.Infrastucture\\Repostory\\HomeApporovalStatusRepository.cs",
+              "RelativeDocumentMoniker": "StayZee.Infrastucture\\Repostory\\HomeApporovalStatusRepository.cs",
+              "ToolTip": "C:\\Users\\gisha\\Desktop\\final24\\Stayzee\\StayZee.Infrastucture\\Repostory\\HomeApporovalStatusRepository.cs",
+              "RelativeToolTip": "StayZee.Infrastucture\\Repostory\\HomeApporovalStatusRepository.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAzwA8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-04T03:29:10.375Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 47,
+              "Title": "IHomeApporovalStatusRepository.cs",
+              "DocumentMoniker": "C:\\Users\\gisha\\Desktop\\final24\\Stayzee\\StayZee.Appilication\\Interfaces\\IRepository\\IHomeApporovalStatusRepository.cs",
+              "RelativeDocumentMoniker": "StayZee.Appilication\\Interfaces\\IRepository\\IHomeApporovalStatusRepository.cs",
+              "ToolTip": "C:\\Users\\gisha\\Desktop\\final24\\Stayzee\\StayZee.Appilication\\Interfaces\\IRepository\\IHomeApporovalStatusRepository.cs",
+              "RelativeToolTip": "StayZee.Appilication\\Interfaces\\IRepository\\IHomeApporovalStatusRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-04T03:20:11.889Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 48,
+              "Title": "PropertyRepositary.cs",
+              "DocumentMoniker": "C:\\Users\\gisha\\Desktop\\final24\\Stayzee\\StayZee.Infrastucture\\Repostory\\PropertyRepositary.cs",
+              "RelativeDocumentMoniker": "StayZee.Infrastucture\\Repostory\\PropertyRepositary.cs",
+              "ToolTip": "C:\\Users\\gisha\\Desktop\\final24\\Stayzee\\StayZee.Infrastucture\\Repostory\\PropertyRepositary.cs",
+              "RelativeToolTip": "StayZee.Infrastucture\\Repostory\\PropertyRepositary.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAuwBsAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-04T04:01:42.059Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 49,
+              "Title": "HomeApprovalStatus.cs",
+              "DocumentMoniker": "C:\\Users\\gisha\\Desktop\\final24\\Stayzee\\StayZee.Domain\\Entities\\HomeApprovalStatus.cs",
+              "RelativeDocumentMoniker": "StayZee.Domain\\Entities\\HomeApprovalStatus.cs",
+              "ToolTip": "C:\\Users\\gisha\\Desktop\\final24\\Stayzee\\StayZee.Domain\\Entities\\HomeApprovalStatus.cs",
+              "RelativeToolTip": "StayZee.Domain\\Entities\\HomeApprovalStatus.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-04T04:05:59.807Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 50,
+              "Title": "IHomeRepository.cs",
+              "DocumentMoniker": "C:\\Users\\gisha\\Desktop\\final24\\Stayzee\\StayZee.Appilication\\Interfaces\\IRepository\\IHomeRepository.cs",
+              "RelativeDocumentMoniker": "StayZee.Appilication\\Interfaces\\IRepository\\IHomeRepository.cs",
+              "ToolTip": "C:\\Users\\gisha\\Desktop\\final24\\Stayzee\\StayZee.Appilication\\Interfaces\\IRepository\\IHomeRepository.cs",
+              "RelativeToolTip": "StayZee.Appilication\\Interfaces\\IRepository\\IHomeRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-04T04:00:36.151Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 51,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\gisha\\Desktop\\final24\\Stayzee\\StayZee.Domain\\Entities\\User.cs",
+              "RelativeDocumentMoniker": "StayZee.Domain\\Entities\\User.cs",
+              "ToolTip": "C:\\Users\\gisha\\Desktop\\final24\\Stayzee\\StayZee.Domain\\Entities\\User.cs",
+              "RelativeToolTip": "StayZee.Domain\\Entities\\User.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAxwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-04T03:46:44.917Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 52,
+              "Title": "IAuthService.cs",
+              "DocumentMoniker": "C:\\Users\\gisha\\Desktop\\final24\\Stayzee\\StayZee.Appilication\\Interfaces\\Iservices\\IAuthService.cs",
+              "RelativeDocumentMoniker": "StayZee.Appilication\\Interfaces\\Iservices\\IAuthService.cs",
+              "ToolTip": "C:\\Users\\gisha\\Desktop\\final24\\Stayzee\\StayZee.Appilication\\Interfaces\\Iservices\\IAuthService.cs",
+              "RelativeToolTip": "StayZee.Appilication\\Interfaces\\Iservices\\IAuthService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-04T03:44:05.644Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 53,
+              "Title": "IBookingStatusservices.cs",
+              "DocumentMoniker": "C:\\Users\\gisha\\Desktop\\final24\\Stayzee\\StayZee.Appilication\\Interfaces\\Iservices\\IBookingStatusservices.cs",
+              "RelativeDocumentMoniker": "StayZee.Appilication\\Interfaces\\Iservices\\IBookingStatusservices.cs",
+              "ToolTip": "C:\\Users\\gisha\\Desktop\\final24\\Stayzee\\StayZee.Appilication\\Interfaces\\Iservices\\IBookingStatusservices.cs",
+              "RelativeToolTip": "StayZee.Appilication\\Interfaces\\Iservices\\IBookingStatusservices.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-04T03:44:02.391Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 54,
+              "Title": "IAdminService.cs",
+              "DocumentMoniker": "C:\\Users\\gisha\\Desktop\\final24\\Stayzee\\StayZee.Appilication\\Interfaces\\Iservices\\IAdminService.cs",
+              "RelativeDocumentMoniker": "StayZee.Appilication\\Interfaces\\Iservices\\IAdminService.cs",
+              "ToolTip": "C:\\Users\\gisha\\Desktop\\final24\\Stayzee\\StayZee.Appilication\\Interfaces\\Iservices\\IAdminService.cs",
+              "RelativeToolTip": "StayZee.Appilication\\Interfaces\\Iservices\\IAdminService.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-04T03:19:07.583Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
