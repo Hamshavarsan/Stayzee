@@ -1,6 +1,6 @@
 ﻿using StayZee.Domain.Entities;
 
-namespace StayZee.Application.Interfaces
+namespace StayZee.Application.Interfaces.IRepository
 {
     public interface IBookingRepository
     {
@@ -9,13 +9,6 @@ namespace StayZee.Application.Interfaces
         Task<IEnumerable<Booking>> GetAllAsync();
     }
 
-    public interface IBookingStatusRepository
-    {
-        Task<BookingStatus?> GetByIdAsync(Guid id);
-    }
-
-    public interface IPaymentStatusRepository
-    {
-        Task<PaymentStatus?> GetByIdAsync(Guid id);
-    }
 }
+
+    

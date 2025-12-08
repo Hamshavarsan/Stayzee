@@ -1,6 +1,6 @@
-﻿using System;
+﻿
+namespace StayZee.Application.DTOs.ResponseDTO
 
-namespace StayZee.Application.DTOs
 {
     public class HomeResponseDto
     {

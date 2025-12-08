@@ -1,8 +1,11 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using StayZee.Application.DTOs;
-using StayZee.Application.Interfaces;
+using StayZee.Application.DTOs.RequestDTO;
+using StayZee.Application.DTOs.ResponseDTO;
+using StayZee.Application.Interfaces.Iservices;
+using StayZee.Application.Interfaces.IRepository;
 
 using StayZee.Domain.Entities;
+using StayZee.Application.Interfaces;
 
 namespace StayZee.Application.Services
 {
@@ -10,19 +13,16 @@ namespace StayZee.Application.Services
     {
         private readonly IBookingRepository _bookingRepo;
         private readonly IHomeRepository _homeRepo;
-        private readonly IBookingStatusRepository _bookingStatusRepo;
-        private readonly IPaymentStatusRepository _paymentStatusRepo;
+       
 
         public BookingService(
             IBookingRepository bookingRepo,
-            IHomeRepository homeRepo,
-            IBookingStatusRepository bookingStatusRepo,
-            IPaymentStatusRepository paymentStatusRepo)
+            IHomeRepository homeRepo
+            )
         {
             _bookingRepo = bookingRepo;
             _homeRepo = homeRepo;
-            _bookingStatusRepo = bookingStatusRepo;
-            _paymentStatusRepo = paymentStatusRepo;
+            
         }
 
         public async Task<BookingResponseDto> CreateBookingAsync(BookingRequestDto request)
@@ -31,11 +31,7 @@ namespace StayZee.Application.Services
             var home = await _homeRepo.GetByIdAsync(request.HomeId);
             if (home == null) throw new Exception("Home not found");
 
-            var bookingStatus = await _bookingStatusRepo.GetByIdAsync(request.BookingStatusId);
-            if (bookingStatus == null) throw new Exception("Booking status not found");
-
-            var paymentStatus = await _paymentStatusRepo.GetByIdAsync(request.PaymentStatusId);
-            if (paymentStatus == null) throw new Exception("Payment status not found");
+            
 
             var booking = new Booking
             {
@@ -45,7 +41,7 @@ namespace StayZee.Application.Services
                 CheckOutDate = request.CheckOutDate,
                 TotalPrice = request.TotalPrice,
                 BookingStatusId = request.BookingStatusId,
-                PaymentStatusId = request.PaymentStatusId
+               
             };
 
             await _bookingRepo.AddAsync(booking);
@@ -59,8 +55,7 @@ namespace StayZee.Application.Services
                 CheckInDate = booking.CheckInDate,
                 CheckOutDate = booking.CheckOutDate,
                 TotalPrice = booking.TotalPrice,
-                BookingStatus = bookingStatus.BookingStatusName,
-                PaymentStatus = paymentStatus.Name,
+                
                 CreatedAt = booking.CreatedAt
             };
         }
@@ -78,8 +73,7 @@ namespace StayZee.Application.Services
                 CheckInDate = b.CheckInDate,
                 CheckOutDate = b.CheckOutDate,
                 TotalPrice = b.TotalPrice,
-                BookingStatus = b.BookingStatus?.BookingStatusName,
-                PaymentStatus = b.PaymentStatus?.Name,
+                
                 CreatedAt = b.CreatedAt
             });
         }
@@ -99,7 +93,7 @@ namespace StayZee.Application.Services
                 CheckOutDate = b.CheckOutDate,
                 TotalPrice = b.TotalPrice,
                 BookingStatus = b.BookingStatus?.BookingStatusName,
-                PaymentStatus = b.PaymentStatus?.Name,
+              
                 CreatedAt = b.CreatedAt
             };
         }

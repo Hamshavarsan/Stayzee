@@ -1,4 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using StayZee.Appilication.Interfaces.IRepository;
 using StayZee.Domain.Entities;
 using StayZee.Infrastructure.Data;
@@ -8,20 +8,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace StayZee.Infrastructure.Repository
+namespace StayZee.Infrastructure.Repostory
 {
-    public class CustomerRepository : ICustomerRepository
+    public class RentalRepository : IRentalRepository
     {
         private readonly AppDbContext _context;
 
-        public CustomerRepository(AppDbContext context)
+        public RentalRepository(AppDbContext context)
         {
             _context = context;
         }
 
-        public async Task<IEnumerable<Customer>> GetAllAsync()
+        public async Task<IEnumerable<Rental>> GetAllAsync()
         {
-            return await _context.Customers.ToListAsync();
+            return await _context.Rentals.ToListAsync();
         }
     }
 }

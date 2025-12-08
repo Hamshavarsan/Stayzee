@@ -15,12 +15,21 @@ namespace StayZee.Application.Services
         private readonly IUserRepository _userRepository;
         private readonly IHomeRepository _homeRepository;
         private readonly IHomeApporovalStatusRepository _approvalStatusRepository;
+        private readonly ICustomerRepository _customerRepository;
+        private readonly IRentalRepository _rentalRepository;
 
-        public AdminService(IUserRepository userRepository, IHomeRepository homeRepository, IHomeApporovalStatusRepository approvalStatusRepository)
+        public AdminService(
+            IUserRepository userRepository, 
+            IHomeRepository homeRepository, 
+            IHomeApporovalStatusRepository approvalStatusRepository,
+            ICustomerRepository customerRepository,
+            IRentalRepository rentalRepository)
         {
             _userRepository = userRepository;
             _homeRepository = homeRepository;
             _approvalStatusRepository = approvalStatusRepository;
+            _customerRepository = customerRepository;
+            _rentalRepository = rentalRepository;
         }
 
         public async Task<IEnumerable<User>> GetAllUsersAsync()
@@ -82,6 +91,15 @@ namespace StayZee.Application.Services
                     await _homeRepository.UpdateAsync(home);
                 }
             }
+        }
+        public async Task<IEnumerable<Customer>> GetAllCustomersAsync()
+        {
+            return await _customerRepository.GetAllAsync();
+        }
+
+        public async Task<IEnumerable<Rental>> GetAllRentalsAsync()
+        {
+            return await _rentalRepository.GetAllAsync();
         }
     }
 }

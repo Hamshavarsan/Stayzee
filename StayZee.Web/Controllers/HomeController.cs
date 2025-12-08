@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
-using StayZee.Application.DTOs;
-using StayZee.Application.Interfaces;
+using StayZee.Application.DTOs.RequestDTO;
+using StayZee.Application.Interfaces.Iservices;
 
 namespace StayZee.Web.Controllers
 {

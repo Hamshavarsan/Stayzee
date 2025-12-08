@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace StayZee.Appilication.Services
+namespace StayZee.Application.Services
 {
     public class PaymentStatusServices
     {

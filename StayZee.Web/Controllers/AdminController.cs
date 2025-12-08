@@ -59,5 +59,19 @@ namespace StayZee.Web.Controllers
             await _adminService.RejectHomeAsync(id);
             return Ok(new { message = "Home rejected successfully." });
         }
+
+        [HttpGet("customers")]
+        public async Task<IActionResult> GetCustomers()
+        {
+            var customers = await _adminService.GetAllCustomersAsync();
+            return Ok(customers);
+        }
+
+        [HttpGet("rentals")]
+        public async Task<IActionResult> GetRentals()
+        {
+            var rentals = await _adminService.GetAllRentalsAsync();
+            return Ok(rentals);
+        }
     }
 }

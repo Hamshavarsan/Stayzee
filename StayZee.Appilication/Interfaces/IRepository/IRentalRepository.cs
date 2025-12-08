@@ -1,4 +1,4 @@
-﻿using StayZee.Domain.Entities;
+using StayZee.Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 
 namespace StayZee.Appilication.Interfaces.IRepository
 {
-    public interface ICustomerRepository
+    public interface IRentalRepository
     {
-        Task<IEnumerable<Customer>> GetAllAsync();
+        Task<IEnumerable<Rental>> GetAllAsync();
     }
 }

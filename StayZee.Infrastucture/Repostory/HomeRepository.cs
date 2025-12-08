@@ -3,7 +3,7 @@ using StayZee.Application.Interfaces;
 using StayZee.Domain.Entities;
 using StayZee.Infrastructure.Data;
 
-namespace StayZee.Infrastructure.Repositories
+namespace StayZee.Infrastructure.Repository
 {
     public class HomeRepository : IHomeRepository
     {

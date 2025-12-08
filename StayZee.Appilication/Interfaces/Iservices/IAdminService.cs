@@ -12,5 +12,7 @@ namespace StayZee.Application.Interfaces.Iservices
         Task<IEnumerable<Home>> GetPendingHomesAsync();
         Task ApproveHomeAsync(Guid homeId);
         Task RejectHomeAsync(Guid homeId);
+        Task<IEnumerable<Customer>> GetAllCustomersAsync();
+        Task<IEnumerable<Rental>> GetAllRentalsAsync();
     }
 }

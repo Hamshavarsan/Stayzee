@@ -1,4 +1,4 @@
-﻿namespace StayZee.Application.DTOs
+﻿namespace StayZee.Application.DTOs.ResponseDTO
 {
     public class BookingResponseDto
     {
@@ -10,7 +10,7 @@
         public DateTime CheckOutDate { get; set; }
         public decimal TotalPrice { get; set; }
         public string? BookingStatus { get; set; }
-        public string? PaymentStatus { get; set; }
+      
         public DateTime CreatedAt { get; set; }
     }
 }

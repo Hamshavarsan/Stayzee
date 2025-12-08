@@ -11,106 +11,106 @@ namespace StayZee.Infrastructure.Migrations
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.RenameColumn(
-                name: "Id",
-                table: "PaymentStatuses",
-                newName: "PaymentStatusId");
+            //migrationBuilder.RenameColumn(
+            //    name: "Id",
+            //    table: "PaymentStatuses",
+            //    newName: "PaymentStatusId");
 
-            migrationBuilder.AlterColumn<string>(
-                name: "Name",
-                table: "Homes",
-                type: "nvarchar(200)",
-                maxLength: 200,
-                nullable: false,
-                oldClrType: typeof(string),
-                oldType: "nvarchar(max)");
+            //migrationBuilder.AlterColumn<string>(
+            //    name: "Name",
+            //    table: "Homes",
+            //    type: "nvarchar(200)",
+            //    maxLength: 200,
+            //    nullable: false,
+            //    oldClrType: typeof(string),
+            //    oldType: "nvarchar(max)");
 
-            migrationBuilder.AlterColumn<string>(
-                name: "Features",
-                table: "Homes",
-                type: "nvarchar(500)",
-                maxLength: 500,
-                nullable: false,
-                oldClrType: typeof(string),
-                oldType: "nvarchar(max)");
+            //migrationBuilder.AlterColumn<string>(
+            //    name: "Features",
+            //    table: "Homes",
+            //    type: "nvarchar(500)",
+            //    maxLength: 500,
+            //    nullable: false,
+            //    oldClrType: typeof(string),
+            //    oldType: "nvarchar(max)");
 
-            migrationBuilder.AlterColumn<string>(
-                name: "Description",
-                table: "Homes",
-                type: "nvarchar(1000)",
-                maxLength: 1000,
-                nullable: false,
-                oldClrType: typeof(string),
-                oldType: "nvarchar(max)");
+            //migrationBuilder.AlterColumn<string>(
+            //    name: "Description",
+            //    table: "Homes",
+            //    type: "nvarchar(1000)",
+            //    maxLength: 1000,
+            //    nullable: false,
+            //    oldClrType: typeof(string),
+            //    oldType: "nvarchar(max)");
 
-            migrationBuilder.AlterColumn<string>(
-                name: "Address",
-                table: "Homes",
-                type: "nvarchar(500)",
-                maxLength: 500,
-                nullable: false,
-                oldClrType: typeof(string),
-                oldType: "nvarchar(max)");
+            //migrationBuilder.AlterColumn<string>(
+            //    name: "Address",
+            //    table: "Homes",
+            //    type: "nvarchar(500)",
+            //    maxLength: 500,
+            //    nullable: false,
+            //    oldClrType: typeof(string),
+            //    oldType: "nvarchar(max)");
 
-            migrationBuilder.AlterColumn<string>(
-                name: "BookingStatusName",
-                table: "BookingStatuses",
-                type: "nvarchar(100)",
-                maxLength: 100,
-                nullable: false,
-                oldClrType: typeof(string),
-                oldType: "nvarchar(max)");
+            //migrationBuilder.AlterColumn<string>(
+            //    name: "BookingStatusName",
+            //    table: "BookingStatuses",
+            //    type: "nvarchar(100)",
+            //    maxLength: 100,
+            //    nullable: false,
+            //    oldClrType: typeof(string),
+            //    oldType: "nvarchar(max)");
 
-            migrationBuilder.AddColumn<Guid>(
-                name: "PropertyId",
-                table: "Bookings",
-                type: "uniqueidentifier",
-                nullable: false,
-                defaultValue: new Guid("00000000-0000-0000-0000-000000000000"));
+            //migrationBuilder.AddColumn<Guid>(
+            //    name: "PropertyId",
+            //    table: "Bookings",
+            //    type: "uniqueidentifier",
+            //    nullable: false,
+            //    defaultValue: new Guid("00000000-0000-0000-0000-000000000000"));
 
-            migrationBuilder.AddColumn<string>(
-                name: "Status",
-                table: "Bookings",
-                type: "nvarchar(max)",
-                nullable: false,
-                defaultValue: "");
+            //migrationBuilder.AddColumn<string>(
+            //    name: "Status",
+            //    table: "Bookings",
+            //    type: "nvarchar(max)",
+            //    nullable: false,
+            //    defaultValue: "");
 
-            migrationBuilder.CreateTable(
-                name: "Favorites",
-                columns: table => new
-                {
-                    id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    CustomerId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    PropertyId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Favorites", x => x.id);
-                });
+            //migrationBuilder.CreateTable(
+            //    name: "Favorites",
+            //    columns: table => new
+            //    {
+            //        id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+            //        CustomerId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+            //        PropertyId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
+            //    },
+            //    constraints: table =>
+            //    {
+            //        table.PrimaryKey("PK_Favorites", x => x.id);
+            //    });
 
-            migrationBuilder.CreateTable(
-                name: "Properties",
-                columns: table => new
-                {
-                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    Title = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    City = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    MiniBedrooms = table.Column<int>(type: "int", nullable: false),
-                    DayPrice = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
-                    IsFurnished = table.Column<bool>(type: "bit", nullable: false),
-                    IsPetFriendly = table.Column<bool>(type: "bit", nullable: false),
-                    HasWifi = table.Column<bool>(type: "bit", nullable: false),
-                    HasParking = table.Column<bool>(type: "bit", nullable: false),
-                    PropertyType = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    IsLongTerm = table.Column<bool>(type: "bit", nullable: false),
-                    ImageUrl = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    MinBedrooms = table.Column<int>(type: "int", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Properties", x => x.Id);
-                });
+            //migrationBuilder.CreateTable(
+            //    name: "Properties",
+            //    columns: table => new
+            //    {
+            //        Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+            //        Title = table.Column<string>(type: "nvarchar(max)", nullable: false),
+            //        Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
+            //        City = table.Column<string>(type: "nvarchar(max)", nullable: false),
+            //        MiniBedrooms = table.Column<int>(type: "int", nullable: false),
+            //        DayPrice = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+            //        IsFurnished = table.Column<bool>(type: "bit", nullable: false),
+            //        IsPetFriendly = table.Column<bool>(type: "bit", nullable: false),
+            //        HasWifi = table.Column<bool>(type: "bit", nullable: false),
+            //        HasParking = table.Column<bool>(type: "bit", nullable: false),
+            //        PropertyType = table.Column<string>(type: "nvarchar(max)", nullable: false),
+            //        IsLongTerm = table.Column<bool>(type: "bit", nullable: false),
+            //        ImageUrl = table.Column<string>(type: "nvarchar(max)", nullable: false),
+            //        MinBedrooms = table.Column<int>(type: "int", nullable: false)
+            //    },
+            //    constraints: table =>
+            //    {
+            //        table.PrimaryKey("PK_Properties", x => x.Id);
+            //    });
 
             migrationBuilder.CreateTable(
                 name: "Rentals",
@@ -134,20 +134,20 @@ namespace StayZee.Infrastructure.Migrations
                     table.PrimaryKey("PK_Rentals", x => x.Id);
                 });
 
-            migrationBuilder.CreateTable(
-                name: "Users",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Username = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Email = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    PhoneNumber = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    NICOrPassport = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    PasswordHash = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Role = table.Column<string>(type: "nvarchar(max)", nullable: false)
-                },
+            //migrationBuilder.CreateTable(
+            //    name: "Users",
+            //    columns: table => new
+            //    {
+            //        Id = table.Column<int>(type: "int", nullable: false)
+            //            .Annotation("SqlServer:Identity", "1, 1"),
+            //        Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
+            //        Username = table.Column<string>(type: "nvarchar(max)", nullable: false),
+            //        Email = table.Column<string>(type: "nvarchar(max)", nullable: false),
+            //        PhoneNumber = table.Column<string>(type: "nvarchar(max)", nullable: false),
+            //        NICOrPassport = table.Column<string>(type: "nvarchar(max)", nullable: false),
+            //        PasswordHash = table.Column<string>(type: "nvarchar(max)", nullable: false),
+            //        Role = table.Column<string>(type: "nvarchar(max)", nullable: false)
+            //    },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Users", x => x.Id);

@@ -1,5 +1,7 @@
-﻿using StayZee.Application.DTOs;
+﻿using StayZee.Application.DTOs.RequestDTO;
+using StayZee.Application.DTOs.ResponseDTO;
 using StayZee.Application.Interfaces;
+using StayZee.Application.Interfaces.Iservices;
 using StayZee.Domain.Entities;
 
 namespace StayZee.Application.Services

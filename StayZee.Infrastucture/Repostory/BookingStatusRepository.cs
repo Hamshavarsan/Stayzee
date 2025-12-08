@@ -6,7 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace StayZee.Infrastructure.Repostory
+namespace StayZee.Infrastructure.Repository
 {
     public class BookingStatusRepository : IBookingStatusRepository
     {

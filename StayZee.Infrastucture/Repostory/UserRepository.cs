@@ -29,7 +29,9 @@ namespace StayZee.Infrastructure.Repository
 
         public async Task<User> GetByUsernameAsync(string username)
         {
-            return await _context.Users.FirstOrDefaultAsync(x => x.Username == username);
+            return await _context.Users
+                .FirstOrDefaultAsync(x =>
+                    x.Username.ToLower().Trim() == username.ToLower().Trim());
         }
 
         public async Task<IEnumerable<User>> GetAllUsersAsync()

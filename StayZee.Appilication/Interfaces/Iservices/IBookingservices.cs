@@ -1,6 +1,8 @@
-﻿using StayZee.Application.DTOs;
+﻿using StayZee.Application.DTOs.RequestDTO;
+using StayZee.Application.DTOs.ResponseDTO;
 
-namespace StayZee.Application.Interfaces
+
+namespace StayZee.Application.Interfaces.Iservices
 {
     public interface IBookingService
     {

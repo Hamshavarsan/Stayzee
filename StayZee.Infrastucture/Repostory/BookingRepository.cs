@@ -1,9 +1,10 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using StayZee.Application.Interfaces;
+
+using StayZee.Application.Interfaces.IRepository;
 using StayZee.Domain.Entities;
 using StayZee.Infrastructure.Data;
 
-namespace StayZee.Infrastructure.Repositories
+namespace StayZee.Infrastructure.Repository
 {
     public class BookingRepository : IBookingRepository
     {
@@ -36,27 +37,5 @@ namespace StayZee.Infrastructure.Repositories
         }
     }
 
-    public class BookingStatusRepository : IBookingStatusRepository
-    {
-        private readonly AppDbContext _context;
-
-        public BookingStatusRepository(AppDbContext context) => _context = context;
-
-        public async Task<BookingStatus?> GetByIdAsync(Guid id)
-        {
-            return await _context.BookingStatuses.FirstOrDefaultAsync(bs => bs.BookingStatusId == id);
-        }
-    }
-
-    public class PaymentStatusRepository : IPaymentStatusRepository
-    {
-        private readonly AppDbContext _context;
-
-        public PaymentStatusRepository(AppDbContext context) => _context = context;
-
-        public async Task<PaymentStatus?> GetByIdAsync(Guid id)
-        {
-            return await _context.PaymentStatuses.FirstOrDefaultAsync(ps => ps.PaymentStatusId == id);
-        }
-    }
+   
 }
