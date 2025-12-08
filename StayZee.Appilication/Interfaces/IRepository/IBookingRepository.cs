@@ -7,6 +7,7 @@ namespace StayZee.Application.Interfaces.IRepository
         Task AddAsync(Booking booking);
         Task<Booking?> GetByIdAsync(Guid bookingId);
         Task<IEnumerable<Booking>> GetAllAsync();
+        Task UpdateAsync(Booking booking);
     }
 
 }

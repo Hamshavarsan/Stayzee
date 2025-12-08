@@ -36,5 +36,14 @@ namespace StayZee.Web.Controllers
             var bookings = await _bookingService.GetAllBookingsAsync();
             return Ok(bookings);
         }
+        [HttpPost("share")]
+        public async Task<IActionResult> ShareBooking([FromBody] BookingShareRequestDto request)
+        {
+            if (request == null)
+                return BadRequest("Request body is empty.");
+
+            var result = await _bookingService.ShareBookingAsync(request);
+            return Ok(result);
+        }
     }
 }

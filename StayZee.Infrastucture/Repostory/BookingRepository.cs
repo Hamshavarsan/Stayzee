@@ -35,7 +35,13 @@ namespace StayZee.Infrastructure.Repository
                 .Include(b => b.PaymentStatus)
                 .ToListAsync();
         }
+        public async Task UpdateAsync(Booking booking)
+        {
+            _context.Bookings.Update(booking);
+            await _context.SaveChangesAsync();
+        }
+
     }
 
-   
+
 }

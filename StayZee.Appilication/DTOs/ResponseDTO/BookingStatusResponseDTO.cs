@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace StayZee.Appilication.DTOs.ResponseDTO
+namespace StayZee.Application.DTOs.ResponseDTO
 {
     internal class BookingStatusResponseDTO
     {

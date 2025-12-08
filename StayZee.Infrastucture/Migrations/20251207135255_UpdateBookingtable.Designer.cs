@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using StayZee.Infrastructure.Data;
 
@@ -11,9 +12,11 @@ using StayZee.Infrastructure.Data;
 namespace StayZee.Infrastructure.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20251207135255_UpdateBookingtable")]
+    partial class UpdateBookingtable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -196,7 +199,7 @@ namespace StayZee.Infrastructure.Migrations
 
                     b.HasKey("HomeApprovalStatusId");
 
-                    b.ToTable("HomeApprovalStatuses");
+                    b.ToTable("HomeApporavalStatuses");
                 });
 
             modelBuilder.Entity("StayZee.Domain.Entities.HomeDocument", b =>
@@ -526,9 +529,6 @@ namespace StayZee.Infrastructure.Migrations
                     b.Property<string>("Email")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("IsBlocked")
-                        .HasColumnType("bit");
 
                     b.Property<string>("NICOrPassport")
                         .IsRequired()

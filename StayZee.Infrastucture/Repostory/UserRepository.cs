@@ -27,12 +27,7 @@ namespace StayZee.Infrastructure.Repository
             return user;
         }
 
-        public async Task<User> GetByUsernameAsync(string username)
-        {
-            return await _context.Users
-                .FirstOrDefaultAsync(x =>
-                    x.Username.ToLower().Trim() == username.ToLower().Trim());
-        }
+        
 
         public async Task<IEnumerable<User>> GetAllUsersAsync()
         {
@@ -48,6 +43,12 @@ namespace StayZee.Infrastructure.Repository
         {
             _context.Users.Update(user);
             await _context.SaveChangesAsync();
+
+        }
+        public async Task<User?> GetByUsernameAsync(string username)
+        {
+            return await _context.Users
+                .FirstOrDefaultAsync(u => u.Username == username);
         }
     }
 }

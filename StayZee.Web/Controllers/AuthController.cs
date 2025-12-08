@@ -26,6 +26,10 @@ namespace StayZee.Web.Controllers
         public async Task<IActionResult> Login(LoginDTO dto)
         {
             var result = await _authService.LoginAsync(dto);
+
+            if (result == null)
+                return BadRequest(new { message = "Invalid username or password!" });
+
             return Ok(result);
         }
     }
