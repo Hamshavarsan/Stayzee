@@ -88,29 +88,29 @@ namespace StayZee.Infrastructure.Migrations
             //        table.PrimaryKey("PK_Favorites", x => x.id);
             //    });
 
-            //migrationBuilder.CreateTable(
-            //    name: "Properties",
-            //    columns: table => new
-            //    {
-            //        Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-            //        Title = table.Column<string>(type: "nvarchar(max)", nullable: false),
-            //        Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
-            //        City = table.Column<string>(type: "nvarchar(max)", nullable: false),
-            //        MiniBedrooms = table.Column<int>(type: "int", nullable: false),
-            //        DayPrice = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
-            //        IsFurnished = table.Column<bool>(type: "bit", nullable: false),
-            //        IsPetFriendly = table.Column<bool>(type: "bit", nullable: false),
-            //        HasWifi = table.Column<bool>(type: "bit", nullable: false),
-            //        HasParking = table.Column<bool>(type: "bit", nullable: false),
-            //        PropertyType = table.Column<string>(type: "nvarchar(max)", nullable: false),
-            //        IsLongTerm = table.Column<bool>(type: "bit", nullable: false),
-            //        ImageUrl = table.Column<string>(type: "nvarchar(max)", nullable: false),
-            //        MinBedrooms = table.Column<int>(type: "int", nullable: false)
-            //    },
-            //    constraints: table =>
-            //    {
-            //        table.PrimaryKey("PK_Properties", x => x.Id);
-            //    });
+            migrationBuilder.CreateTable(
+                name: "Properties",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    Title = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    City = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    MiniBedrooms = table.Column<int>(type: "int", nullable: false),
+                    DayPrice = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    IsFurnished = table.Column<bool>(type: "bit", nullable: false),
+                    IsPetFriendly = table.Column<bool>(type: "bit", nullable: false),
+                    HasWifi = table.Column<bool>(type: "bit", nullable: false),
+                    HasParking = table.Column<bool>(type: "bit", nullable: false),
+                    PropertyType = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    IsLongTerm = table.Column<bool>(type: "bit", nullable: false),
+                    ImageUrl = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    MinBedrooms = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Properties", x => x.Id);
+                });
 
             migrationBuilder.CreateTable(
                 name: "Rentals",

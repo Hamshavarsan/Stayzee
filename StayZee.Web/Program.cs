@@ -18,31 +18,19 @@ var builder = WebApplication.CreateBuilder(args);
 // ----------------------
 builder.Services.AddDbContext<AppDbContext>(opt =>
     opt.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"),
-b => b.MigrationsAssembly("StayZee.Infrastructure")));
+    b => b.MigrationsAssembly("StayZee.Infrastructure")));
 
 // ----------------------
 // Register Repositories
 // ----------------------
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IPropertyRepository, PropertyRepository>();
-
 builder.Services.AddScoped<IHomeRepository, HomeRepository>();
 builder.Services.AddScoped<IHomeApporovalStatusRepository, HomeApporovalStatusRepository>();
 builder.Services.AddScoped<ICustomerRepository, CustomerRepository>();
 builder.Services.AddScoped<IRentalRepository, RentalRepository>();
-
-
-builder.Services.AddControllers();
-// Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
-builder.Services.AddOpenApi();
-builder.Services.AddSwaggerGen();
-
-
 builder.Services.AddScoped<IBookingRepository, BookingRepository>();
-builder.Services.AddScoped<ICustomerRepository, CustomerRepository>();
 builder.Services.AddScoped<IBookingStatusRepository, BookingStatusRepository>();
-builder.Services.AddScoped<IHomeRepository, HomeRepository>();  // <-- IMPORTANT for BookingService
-
 
 // ----------------------
 // Register Services
@@ -51,6 +39,21 @@ builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddScoped<IRentalService, RentalService>();
 builder.Services.AddScoped<ICloudService, CloudService>();
 builder.Services.AddScoped<IBookingService, BookingService>();
+builder.Services.AddScoped<IAdminService, AdminService>();
+
+builder.Services.AddControllers();
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
+builder.Services.AddOpenApi();
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAll", policy =>
+        policy.AllowAnyOrigin()
+              .AllowAnyMethod()
+              .AllowAnyHeader()
+    );
+});
 
 // ----------------------
 // JWT Authentication
@@ -70,40 +73,40 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
         };
     });
 
-builder.Services.AddScoped<IRentalService, RentalService>();
-builder.Services.AddScoped<IRentalService, RentalService>();
-builder.Services.AddScoped<ICloudService, CloudService>();
-builder.Services.AddScoped<IAdminService, AdminService>();
-
-
-builder.Services.AddControllers();
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
-builder.Services.AddCors(options =>
-{
-    options.AddPolicy("AllowAll", policy =>
-        policy.AllowAnyOrigin()
-              .AllowAnyMethod()
-              .AllowAnyHeader()
-    );
-});
-
 var app = builder.Build();
 
-// Apply pending migrations automatically on startup with error handling
+// ----------------------
+// Apply migrations and seed admin
+// ----------------------
 using (var scope = app.Services.CreateScope())
 {
     var dbContext = scope.ServiceProvider.GetRequiredService<AppDbContext>();
     try
     {
+        // Apply pending migrations
         dbContext.Database.Migrate();
     }
     catch (Exception ex)
     {
-        // Log the error but continue - the column might already exist
         Console.WriteLine($"Migration warning: {ex.Message}");
-        // Try to ensure database is created at minimum
         dbContext.Database.EnsureCreated();
+    }
+
+    // Seed Admin user if not exists
+    if (!dbContext.Users.Any(u => u.Role == "Admin"))
+    {
+        dbContext.Users.Add(new StayZee.Domain.Entities.User
+        {
+            Name = "Admin",
+            Username = "admin",
+            Email = "admin@example.com",
+            PhoneNumber = "1234567890",
+            NICOrPassport = "A1234567",
+            PasswordHash = BCrypt.Net.BCrypt.HashPassword("admin123"),
+            Role = "Admin"
+        });
+        dbContext.SaveChanges();
+        Console.WriteLine("Admin user created successfully!");
     }
 }
 
@@ -114,10 +117,6 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseCors("AllowAll");
-
-
-app.UseCors("AllowAll");
-
 
 app.UseAuthentication();
 app.UseAuthorization();

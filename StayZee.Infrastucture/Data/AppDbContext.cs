@@ -36,6 +36,7 @@ namespace StayZee.Infrastructure.Data
             }
             base.OnModelCreating(modelBuilder);
 
+
             modelBuilder.Entity<Booking>()
                 .HasOne(b => b.Customer)
                 .WithMany(c => c.Bookings)
