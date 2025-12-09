@@ -25,7 +25,11 @@ namespace StayZee.Web.Controllers
             var result = await _service.CreateRental(request);
             return Ok(result);
         }
+        
+
     }
+
+
 
 
 }

@@ -1,19 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using BCrypt.Net;
+using Microsoft.Extensions.Configuration;
+using Microsoft.IdentityModel.Tokens;
 using StayZee.Application.DTOs.RequestDTO;
 using StayZee.Application.DTOs.ResponseDTO;
 using StayZee.Application.Interfaces.IRepository;
 using StayZee.Application.Interfaces.Iservices;
 using StayZee.Domain.Entities;
-using Microsoft.Extensions.Configuration;
-using Microsoft.IdentityModel.Tokens;
-using System.IdentityModel.Tokens.Jwt;
-using BCrypt.Net;
-using System.Security.Claims;
-using System.Threading.Tasks;
 using System;
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace StayZee.Application.Services
 {
@@ -46,7 +43,7 @@ namespace StayZee.Application.Services
             };
 
             await _userRepository.AddUserAsync(newUser);
-            return await GenerateToken(newUser);
+            return await GenerateToken(newUser); // இங்க call ஆகுது
         }
 
         public async Task<AuthResponseDTO> LoginAsync(LoginDTO model)
@@ -55,32 +52,37 @@ namespace StayZee.Application.Services
             if (user == null || !BCrypt.Net.BCrypt.Verify(model.Password, user.PasswordHash))
                 throw new Exception("Invalid credentials");
 
-            return await GenerateToken(user);
+            return await GenerateToken(user); // இங்கயும் call ஆகுது
         }
 
+
+        // இதுதான் நீ தேடுனது – GenerateToken method இங்கதான் இருக்கணும்!
         private async Task<AuthResponseDTO> GenerateToken(User user)
         {
             var claims = new[]
             {
+                new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()), // userId JWT-லயும் போகுது
                 new Claim(ClaimTypes.Name, user.Username),
                 new Claim(ClaimTypes.Role, user.Role)
             };
 
-            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["Jwt:Key"]));
+            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["Jwt:Key"]!));
             var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
+
             var token = new JwtSecurityToken(
                 issuer: _config["Jwt:Issuer"],
                 audience: _config["Jwt:Audience"],
                 claims: claims,
-                expires: DateTime.Now.AddHours(3),
+                expires: DateTime.Now.AddDays(7),
                 signingCredentials: creds
             );
 
             return new AuthResponseDTO
             {
                 Token = new JwtSecurityTokenHandler().WriteToken(token),
+                Username = user.Username,
                 Role = user.Role,
-                Username = user.Username
+                UserId = user.Id                     // இதுதான் Angular-க்கு வரும்!
             };
         }
     }

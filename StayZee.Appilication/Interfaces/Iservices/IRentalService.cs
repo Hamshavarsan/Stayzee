@@ -11,5 +11,7 @@ namespace StayZee.Application.Interfaces.Iservices
     public interface IRentalService
     {
         Task<RentalResponse> CreateRental(CreateRentalRequest request);
+        Task<List<RentalCardDTO>> GetAllRentals();
+
     }
 }
