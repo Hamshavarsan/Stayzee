@@ -12,5 +12,7 @@
         public string? BookingStatus { get; set; }
       
         public DateTime CreatedAt { get; set; }
+        public List<Guid>? SharedCustomerIds { get; set; }
+        public List<string>? SharedCustomerEmails { get; set; }
     }
 }

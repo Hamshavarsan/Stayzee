@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using StayZee.Application.DTOs.RequestDTO;
 using StayZee.Application.Interfaces.Iservices;
+using System;
+using System.Threading.Tasks;
 
 namespace StayZee.Web.Controllers
 {
@@ -36,14 +38,23 @@ namespace StayZee.Web.Controllers
             var bookings = await _bookingService.GetAllBookingsAsync();
             return Ok(bookings);
         }
+
         [HttpPost("share")]
         public async Task<IActionResult> ShareBooking([FromBody] BookingShareRequestDto request)
         {
             if (request == null)
                 return BadRequest("Request body is empty.");
 
-            var result = await _bookingService.ShareBookingAsync(request);
-            return Ok(result);
+            try
+            {
+                var result = await _bookingService.ShareBookingAsync(request);
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                // return 400 with message; you can replace with proper ProblemDetails or custom error model
+                return BadRequest(new { error = ex.Message });
+            }
         }
     }
 }

@@ -1,5 +1,4 @@
-﻿using StayZee.Appilication.Interfaces.IRepository;
-using StayZee.Application.DTOs.RequestDTO;
+﻿using StayZee.Application.DTOs.RequestDTO;
 using StayZee.Application.DTOs.ResponseDTO;
 using StayZee.Application.Interfaces;
 using StayZee.Application.Interfaces.IRepository;
@@ -14,6 +13,8 @@ namespace StayZee.Application.Services
 {
     public class BookingService : IBookingService
     {
+        private const int MAX_SHARED_PER_BOOKING = 10;
+
         private readonly IBookingRepository _bookingRepo;
         private readonly IHomeRepository _homeRepo;
         private readonly ICustomerRepository _customerRepo;
@@ -42,7 +43,7 @@ namespace StayZee.Application.Services
                 CheckOutDate = request.CheckOutDate,
                 TotalPrice = request.TotalPrice,
                 BookingStatusId = request.BookingStatusId,
-                Status = "Created" // ✅ Initialize non-nullable property
+                Status = "Created"
             };
 
             await _bookingRepo.AddAsync(booking);
@@ -73,7 +74,9 @@ namespace StayZee.Application.Services
                 CheckInDate = b.CheckInDate,
                 CheckOutDate = b.CheckOutDate,
                 TotalPrice = b.TotalPrice,
-                CreatedAt = b.CreatedAt
+                CreatedAt = b.CreatedAt,
+                SharedCustomerIds = b.SharedCustomers?.Select(s => s.CustomerId).ToList(),
+                SharedCustomerEmails = b.SharedCustomers?.Select(s => s.Customer?.Email).ToList()
             });
         }
 
@@ -92,7 +95,9 @@ namespace StayZee.Application.Services
                 CheckOutDate = b.CheckOutDate,
                 TotalPrice = b.TotalPrice,
                 BookingStatus = b.BookingStatus?.BookingStatusName,
-                CreatedAt = b.CreatedAt
+                CreatedAt = b.CreatedAt,
+                SharedCustomerIds = b.SharedCustomers?.Select(s => s.CustomerId).ToList(),
+                SharedCustomerEmails = b.SharedCustomers?.Select(s => s.Customer?.Email).ToList()
             };
         }
 
@@ -102,26 +107,53 @@ namespace StayZee.Application.Services
             var booking = await _bookingRepo.GetByIdAsync(request.BookingId);
             if (booking == null) throw new Exception("Booking not found");
 
-            if (request.Emails == null || request.Emails.Count == 0)
+            if (request.Emails == null || !request.Emails.Any())
                 throw new Exception("You must provide at least one email address");
 
-            var validEmails = new List<string>();
+            // remove duplicates and trim
+            var candidateEmails = request.Emails
+                .Where(e => !string.IsNullOrWhiteSpace(e))
+                .Select(e => e.Trim().ToLowerInvariant())
+                .Distinct()
+                .ToList();
 
-            foreach (var email in request.Emails)
+            if (!candidateEmails.Any())
+                throw new Exception("No valid email addresses provided");
+
+            // how many already shared?
+            var alreadyCount = await _bookingRepo.CountSharedCustomersAsync(booking.BookingId);
+            var remainingSlots = MAX_SHARED_PER_BOOKING - alreadyCount;
+            if (remainingSlots <= 0)
+                throw new Exception($"Booking already has maximum of {MAX_SHARED_PER_BOOKING} shared users.");
+
+            var validShared = new List<BookingSharedCustomer>();
+
+            foreach (var email in candidateEmails)
             {
+                if (validShared.Count >= remainingSlots) break;
+
                 var customer = await _customerRepo.GetByEmailAsync(email);
-                if (customer != null) // ✅ Compare against object, not void
-                    validEmails.Add(email);
+                if (customer == null) continue; // skip unregistered emails
+
+                // don't duplicate if already shared
+                var alreadyShared = booking.SharedCustomers.Any(sc => sc.CustomerId == customer.Id);
+                if (alreadyShared) continue;
+
+                validShared.Add(new BookingSharedCustomer
+                {
+                    BookingId = booking.BookingId,
+                    CustomerId = customer.Id
+                });
             }
 
-            if (!validEmails.Any())
-                throw new Exception("No valid registered emails provided");
+            if (!validShared.Any())
+                throw new Exception("No valid registered users found or all provided users already added.");
 
-            booking.SharedEmails = string.Join(",", validEmails);
-            booking.SharedAt = DateTime.UtcNow;
+            // persist shared users
+            await _bookingRepo.AddSharedCustomersAsync(validShared);
 
-            // ✅ DO NOT assign void
-            await _bookingRepo.UpdateAsync(booking);
+            // refresh booking with shared customers
+            booking = await _bookingRepo.GetByIdAsync(booking.BookingId);
 
             return new BookingResponseDto
             {
@@ -133,10 +165,10 @@ namespace StayZee.Application.Services
                 CheckOutDate = booking.CheckOutDate,
                 TotalPrice = booking.TotalPrice,
                 BookingStatus = booking.BookingStatus?.BookingStatusName,
-                CreatedAt = booking.CreatedAt
+                CreatedAt = booking.CreatedAt,
+                SharedCustomerIds = booking.SharedCustomers?.Select(s => s.CustomerId).ToList(),
+                SharedCustomerEmails = booking.SharedCustomers?.Select(s => s.Customer?.Email).ToList()
             };
         }
     }
 }
-    
-

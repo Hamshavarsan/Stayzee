@@ -27,6 +27,10 @@ namespace StayZee.Domain.Entities
         // Shared booking
         public string? SharedEmails { get; set; }
         public DateTime? SharedAt { get; set; }
+        // Booking.cs
+        public ICollection<BookingSharedCustomer> SharedCustomers { get; set; } = new List<BookingSharedCustomer>();
+
+
     }
 }
 

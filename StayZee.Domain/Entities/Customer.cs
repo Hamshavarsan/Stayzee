@@ -21,5 +21,8 @@ namespace StayZee.Domain.Entities
         public ICollection<Booking>? Bookings { get; set; }
 
         public ICollection<KYC> KYCUploads { get; set; } = new List<KYC>();
+        public ICollection<BookingSharedCustomer> SharedBookings { get; set; } = new List<BookingSharedCustomer>();
+
     }
 }
+
