@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace StayZee.Infrastructure.Migrations
 {
     /// <inheritdoc />
-    public partial class BookingSharedCustomerTable_Fixed : Migration
+    public partial class InitialCreate : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -167,7 +167,9 @@ namespace StayZee.Infrastructure.Migrations
                     PhotoUrl2 = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     PhotoUrl3 = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     PhotoUrl4 = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false)
+                    CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    IsApproved = table.Column<bool>(type: "bit", nullable: false),
+                    IsDeleted = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -187,7 +189,10 @@ namespace StayZee.Infrastructure.Migrations
                     NICOrPassport = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     PasswordHash = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Role = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    IsBlocked = table.Column<bool>(type: "bit", nullable: false)
+                    IsBlocked = table.Column<bool>(type: "bit", nullable: false),
+                    VerificationCode = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    VerificationExpiresAt = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    IsVerified = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -229,7 +234,7 @@ namespace StayZee.Infrastructure.Migrations
                     AvailableFrom = table.Column<DateTime>(type: "datetime2", nullable: false),
                     AvailableTo = table.Column<DateTime>(type: "datetime2", nullable: false),
                     Features = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: false),
-                    RatePerDay = table.Column<decimal>(type: "decimal(18,2)", precision: 18, scale: 2, nullable: false),
+                    RatePerDay = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     OwnerId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     HomeApprovalStatusId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
                 },
@@ -241,7 +246,55 @@ namespace StayZee.Infrastructure.Migrations
                         column: x => x.HomeApprovalStatusId,
                         principalTable: "HomeApprovalStatuses",
                         principalColumn: "HomeApprovalStatusId",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Bookings",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    UserId = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    RentalId = table.Column<int>(type: "int", nullable: false),
+                    StartDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    EndDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    TotalAmount = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    BookedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    BookingStatusId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
+                    CustomerId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
+                    HomeId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
+                    PaymentStatusId = table.Column<Guid>(type: "uniqueidentifier", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Bookings", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Bookings_BookingStatuses_BookingStatusId",
+                        column: x => x.BookingStatusId,
+                        principalTable: "BookingStatuses",
+                        principalColumn: "BookingStatusId");
+                    table.ForeignKey(
+                        name: "FK_Bookings_Customers_CustomerId",
+                        column: x => x.CustomerId,
+                        principalTable: "Customers",
+                        principalColumn: "Id");
+                    table.ForeignKey(
+                        name: "FK_Bookings_Homes_HomeId",
+                        column: x => x.HomeId,
+                        principalTable: "Homes",
+                        principalColumn: "Id");
+                    table.ForeignKey(
+                        name: "FK_Bookings_PaymentStatuses_PaymentStatusId",
+                        column: x => x.PaymentStatusId,
+                        principalTable: "PaymentStatuses",
+                        principalColumn: "PaymentStatusId");
+                    table.ForeignKey(
+                        name: "FK_Bookings_Rentals_RentalId",
+                        column: x => x.RentalId,
+                        principalTable: "Rentals",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -266,51 +319,24 @@ namespace StayZee.Infrastructure.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Bookings",
+                name: "AdminIncomes",
                 columns: table => new
                 {
-                    BookingId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    PropertyId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    CustomerId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    HomeId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    CheckInDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    CheckOutDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    TotalPrice = table.Column<decimal>(type: "decimal(18,2)", precision: 18, scale: 2, nullable: false),
-                    BookingStatusId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    PaymentStatusId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    InvoiceId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
-                    CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    Status = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    SharedEmails = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    SharedAt = table.Column<DateTime>(type: "datetime2", nullable: true)
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    BookingId = table.Column<int>(type: "int", nullable: false),
+                    Amount = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    RecordedAt = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Bookings", x => x.BookingId);
+                    table.PrimaryKey("PK_AdminIncomes", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Bookings_BookingStatuses_BookingStatusId",
-                        column: x => x.BookingStatusId,
-                        principalTable: "BookingStatuses",
-                        principalColumn: "BookingStatusId",
-                        onDelete: ReferentialAction.Restrict);
-                    table.ForeignKey(
-                        name: "FK_Bookings_Customers_CustomerId",
-                        column: x => x.CustomerId,
-                        principalTable: "Customers",
+                        name: "FK_AdminIncomes_Bookings_BookingId",
+                        column: x => x.BookingId,
+                        principalTable: "Bookings",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
-                    table.ForeignKey(
-                        name: "FK_Bookings_Homes_HomeId",
-                        column: x => x.HomeId,
-                        principalTable: "Homes",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
-                    table.ForeignKey(
-                        name: "FK_Bookings_PaymentStatuses_PaymentStatusId",
-                        column: x => x.PaymentStatusId,
-                        principalTable: "PaymentStatuses",
-                        principalColumn: "PaymentStatusId",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -319,16 +345,17 @@ namespace StayZee.Infrastructure.Migrations
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     BookingId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    BookingId1 = table.Column<int>(type: "int", nullable: false),
                     CustomerId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_BookingSharedCustomers", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_BookingSharedCustomers_Bookings_BookingId",
-                        column: x => x.BookingId,
+                        name: "FK_BookingSharedCustomers_Bookings_BookingId1",
+                        column: x => x.BookingId1,
                         principalTable: "Bookings",
-                        principalColumn: "BookingId",
+                        principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_BookingSharedCustomers_Customers_CustomerId",
@@ -344,7 +371,8 @@ namespace StayZee.Infrastructure.Migrations
                 {
                     PaymentId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     BookingId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    Amount = table.Column<decimal>(type: "decimal(18,2)", precision: 18, scale: 2, nullable: false),
+                    BookingId1 = table.Column<int>(type: "int", nullable: false),
+                    Amount = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     StripeTxnId = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     PaidAt = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
@@ -352,10 +380,10 @@ namespace StayZee.Infrastructure.Migrations
                 {
                     table.PrimaryKey("PK_Payments", x => x.PaymentId);
                     table.ForeignKey(
-                        name: "FK_Payments_Bookings_BookingId",
-                        column: x => x.BookingId,
+                        name: "FK_Payments_Bookings_BookingId1",
+                        column: x => x.BookingId1,
                         principalTable: "Bookings",
-                        principalColumn: "BookingId",
+                        principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
@@ -380,6 +408,11 @@ namespace StayZee.Infrastructure.Migrations
                 });
 
             migrationBuilder.CreateIndex(
+                name: "IX_AdminIncomes_BookingId",
+                table: "AdminIncomes",
+                column: "BookingId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Bookings_BookingStatusId",
                 table: "Bookings",
                 column: "BookingStatusId");
@@ -395,20 +428,19 @@ namespace StayZee.Infrastructure.Migrations
                 column: "HomeId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Bookings_InvoiceId",
-                table: "Bookings",
-                column: "InvoiceId");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_Bookings_PaymentStatusId",
                 table: "Bookings",
                 column: "PaymentStatusId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_BookingSharedCustomers_BookingId_CustomerId",
+                name: "IX_Bookings_RentalId",
+                table: "Bookings",
+                column: "RentalId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_BookingSharedCustomers_BookingId1",
                 table: "BookingSharedCustomers",
-                columns: new[] { "BookingId", "CustomerId" },
-                unique: true);
+                column: "BookingId1");
 
             migrationBuilder.CreateIndex(
                 name: "IX_BookingSharedCustomers_CustomerId",
@@ -437,43 +469,16 @@ namespace StayZee.Infrastructure.Migrations
                 column: "CustomerId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Payments_BookingId",
+                name: "IX_Payments_BookingId1",
                 table: "Payments",
-                column: "BookingId",
-                unique: true);
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Properties_Id",
-                table: "Properties",
-                column: "Id",
-                unique: true);
-
-            migrationBuilder.AddForeignKey(
-                name: "FK_Bookings_Invoices_InvoiceId",
-                table: "Bookings",
-                column: "InvoiceId",
-                principalTable: "Invoices",
-                principalColumn: "Id");
+                column: "BookingId1");
         }
 
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropForeignKey(
-                name: "FK_Bookings_BookingStatuses_BookingStatusId",
-                table: "Bookings");
-
-            migrationBuilder.DropForeignKey(
-                name: "FK_Bookings_Customers_CustomerId",
-                table: "Bookings");
-
-            migrationBuilder.DropForeignKey(
-                name: "FK_Bookings_Homes_HomeId",
-                table: "Bookings");
-
-            migrationBuilder.DropForeignKey(
-                name: "FK_Bookings_Invoices_InvoiceId",
-                table: "Bookings");
+            migrationBuilder.DropTable(
+                name: "AdminIncomes");
 
             migrationBuilder.DropTable(
                 name: "BookingSharedCustomers");
@@ -488,6 +493,9 @@ namespace StayZee.Infrastructure.Migrations
                 name: "HomeOwners");
 
             migrationBuilder.DropTable(
+                name: "Invoices");
+
+            migrationBuilder.DropTable(
                 name: "KYCs");
 
             migrationBuilder.DropTable(
@@ -500,10 +508,13 @@ namespace StayZee.Infrastructure.Migrations
                 name: "Properties");
 
             migrationBuilder.DropTable(
-                name: "Rentals");
+                name: "Users");
 
             migrationBuilder.DropTable(
-                name: "Users");
+                name: "Payments");
+
+            migrationBuilder.DropTable(
+                name: "Bookings");
 
             migrationBuilder.DropTable(
                 name: "BookingStatuses");
@@ -515,19 +526,13 @@ namespace StayZee.Infrastructure.Migrations
                 name: "Homes");
 
             migrationBuilder.DropTable(
-                name: "HomeApprovalStatuses");
-
-            migrationBuilder.DropTable(
-                name: "Invoices");
-
-            migrationBuilder.DropTable(
-                name: "Payments");
-
-            migrationBuilder.DropTable(
-                name: "Bookings");
-
-            migrationBuilder.DropTable(
                 name: "PaymentStatuses");
+
+            migrationBuilder.DropTable(
+                name: "Rentals");
+
+            migrationBuilder.DropTable(
+                name: "HomeApprovalStatuses");
         }
     }
 }

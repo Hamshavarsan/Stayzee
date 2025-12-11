@@ -27,7 +27,7 @@ namespace StayZee.Infrastructure.Data
         public DbSet<favorite> Favorites { get; set; }
         public DbSet<Rental> Rentals { get; set; }
         public DbSet<BookingSharedCustomer> BookingSharedCustomers { get; set; }
-
+        public DbSet<AdminIncome> AdminIncomes { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             // Set decimal precision globally
@@ -41,33 +41,7 @@ namespace StayZee.Infrastructure.Data
             base.OnModelCreating(modelBuilder);
 
             // ----------------- Booking -----------------
-            modelBuilder.Entity<Booking>()
-                .HasOne(b => b.Customer)
-                .WithMany(c => c.Bookings)
-                .HasForeignKey(b => b.CustomerId)
-                .OnDelete(DeleteBehavior.Restrict);
-
-            modelBuilder.Entity<Booking>()
-                .HasOne(b => b.Home)
-                .WithMany(h => h.Bookings)
-                .HasForeignKey(b => b.HomeId)
-                .OnDelete(DeleteBehavior.Restrict);
-
-            modelBuilder.Entity<Booking>()
-                .HasOne(b => b.BookingStatus)
-                .WithMany(bs => bs.Bookings)
-                .HasForeignKey(b => b.BookingStatusId)
-                .OnDelete(DeleteBehavior.Restrict);
-
-            modelBuilder.Entity<Booking>()
-                .HasOne(b => b.PaymentStatus)
-                .WithMany(ps => ps.Bookings)
-                .HasForeignKey(b => b.PaymentStatusId)
-                .OnDelete(DeleteBehavior.Restrict);
-
-            modelBuilder.Entity<Booking>()
-                .Property(b => b.TotalPrice)
-                .HasPrecision(18, 2);
+            
 
             // ----------------- KYC -----------------
             modelBuilder.Entity<KYC>()
@@ -83,50 +57,50 @@ namespace StayZee.Infrastructure.Data
                 .HasForeignKey(d => d.HomeId)
                 .OnDelete(DeleteBehavior.Cascade);
 
-            // ----------------- Payment -----------------
-            modelBuilder.Entity<Payment>()
-                .HasOne(p => p.Booking)
-                .WithOne(b => b.Payment)
-                .HasForeignKey<Payment>(p => p.BookingId);
+            //// ----------------- Payment -----------------
+            //modelBuilder.Entity<Payment>()
+            //    .HasOne(p => p.Booking)
+            //    .WithOne(b => b.Payment)
+            //    .HasForeignKey<Payment>(p => p.BookingId);
 
-            modelBuilder.Entity<Payment>()
-                .Property(p => p.Amount)
-                .HasPrecision(18, 2);
+            //modelBuilder.Entity<Payment>()
+            //    .Property(p => p.Amount)
+            //    .HasPrecision(18, 2);
 
-            // ----------------- Home -----------------
-            modelBuilder.Entity<Home>()
-                .Property(h => h.RatePerDay)
-                .HasPrecision(18, 2);
+            //// ----------------- Home -----------------
+            //modelBuilder.Entity<Home>()
+            //    .Property(h => h.RatePerDay)
+            //    .HasPrecision(18, 2);
 
-            modelBuilder.Entity<Home>()
-                .HasOne(h => h.HomeApprovalStatus)
-                .WithMany(s => s.Homes)
-                .HasForeignKey(h => h.HomeApprovalStatusId)
-                .OnDelete(DeleteBehavior.Restrict);
+            //modelBuilder.Entity<Home>()
+            //    .HasOne(h => h.HomeApprovalStatus)
+            //    .WithMany(s => s.Homes)
+            //    .HasForeignKey(h => h.HomeApprovalStatusId)
+            //    .OnDelete(DeleteBehavior.Restrict);
 
-            // ----------------- Property -----------------
-            modelBuilder.Entity<Property>()
-                .HasIndex(p => p.Id)
-                .IsUnique();
+            //// ----------------- Property -----------------
+            //modelBuilder.Entity<Property>()
+            //    .HasIndex(p => p.Id)
+            //    .IsUnique();
 
-            // ----------------- BookingSharedCustomer -----------------
-            modelBuilder.Entity<BookingSharedCustomer>(bsc =>
-            {
-                bsc.HasKey(x => x.Id);
+            //// ----------------- BookingSharedCustomer -----------------
+            //modelBuilder.Entity<BookingSharedCustomer>(bsc =>
+            //{
+            //    bsc.HasKey(x => x.Id);
 
-                bsc.HasOne(x => x.Booking)
-                   .WithMany(b => b.SharedCustomers)
-                   .HasForeignKey(x => x.BookingId)
-                   .OnDelete(DeleteBehavior.Cascade);
+            //    bsc.HasOne(x => x.Booking)
+            //       .WithMany(b => b.SharedCustomers)
+            //       .HasForeignKey(x => x.BookingId)
+            //       .OnDelete(DeleteBehavior.Cascade);
 
-                bsc.HasOne(x => x.Customer)
-                   .WithMany(c => c.SharedBookings)
-                   .HasForeignKey(x => x.CustomerId)
-                   .OnDelete(DeleteBehavior.Cascade);
+            //    bsc.HasOne(x => x.Customer)
+            //       .WithMany(c => c.SharedBookings)
+            //       .HasForeignKey(x => x.CustomerId)
+            //       .OnDelete(DeleteBehavior.Cascade);
 
-                // Unique index to prevent duplicates
-                bsc.HasIndex(x => new { x.BookingId, x.CustomerId }).IsUnique();
-            });
+            //    // Unique index to prevent duplicates
+            //    bsc.HasIndex(x => new { x.BookingId, x.CustomerId }).IsUnique();
+            //});
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using StayZee.Application.DTOs.RequestDTO;
 using StayZee.Application.DTOs.ResponseDTO;
+using StayZee.Application.DTOs.ResponseDTO.StayZee.Application.DTOs.ResponseDTO;
 using StayZee.Application.Interfaces.Iservices;
 using StayZee.Domain.Entities;
 using StayZee.Infrastructure.Data;
@@ -67,7 +68,7 @@ namespace StayZee.Infrastructure.Repository
                 return new RentalResponse
                 {
                     RentalId = rental.Id,
-                    Message = "Property listed successfully! Role updated to Rentals"
+                   // Message = "Property listed successfully! Role updated to Rentals"
                 };
             }
             catch (Exception)
@@ -107,55 +108,71 @@ namespace StayZee.Infrastructure.Repository
 
             return rentals;
         }
-        public async Task<BookingResponseDto> CreateBookingAsync(int rentalId, int userId)
+        public async Task<BookingResponseDto> CreateBookingAsync(CreateBookingRequest request)
         {
+            if (request.StartDate >= request.EndDate)
+                throw new Exception("End date must be after start date");
+
             var rental = await _context.Rentals
-                .FirstOrDefaultAsync(r => r.Id == rentalId && r.IsApproved == true && r.IsDeleted != true);
+                .FirstOrDefaultAsync(r => r.Id == request.RentalId);
 
             if (rental == null)
-                throw new Exception("Rental not found or not approved");
+                throw new Exception("Rental not found");
 
-            var user = await _context.Users
-                .FirstOrDefaultAsync(u => u.Id == userId);
+            // Check overlapping bookings
+            var isOverlapping = await _context.Bookings.AnyAsync(b =>
+                b.RentalId == request.RentalId &&
+                b.StartDate < request.EndDate &&
+                b.EndDate > request.StartDate);
 
-            if (user == null)
-                throw new Exception("User not found");
+            if (isOverlapping)
+                throw new Exception("This rental is not available for the selected dates");
 
-            var booking = new Booking
+            var days = (request.EndDate - request.StartDate).Days + 1; // inclusive
+            decimal basePrice = days >= 30
+                ? (days / 30) * rental.MonthPrice + (days % 30) * rental.OneDayPrice
+                : days * rental.OneDayPrice;
+
+            decimal serviceFee = basePrice * 0.15m;
+            decimal totalAmount = basePrice + serviceFee;
+
+            await using var transaction = await _context.Database.BeginTransactionAsync();
+            try
             {
-                RentalId = rentalId,
-                UserId = userId,
-                //BookingStatus = "Pending",
-                CreatedAt = DateTime.UtcNow
-            };
-
-            _context.Bookings.Add(booking);
-            await _context.SaveChangesAsync();
-
-            return new BookingResponseDto
-            {
-                BookingId = Guid.NewGuid(),                    // Guid generate பண்ணு
-                Message = "Booking request sent successfully!",
-                CustomerId = Guid.Parse(user.Id.ToString()),   // int → Guid ஆ மாத்து
-                HomeId = Guid.Parse(rental.Id.ToString()),     // int → Guid ஆ மாத்து
-                HomeName = rental.HomeTitle,
-                HomeImages = new List<string?>
+                var booking = new Booking
                 {
-                    rental.PhotoUrl1,
-                    rental.PhotoUrl2,
-                    rental.PhotoUrl3,
-                    rental.PhotoUrl4
-                }
-                .Where(x => !string.IsNullOrEmpty(x))
-                .ToList()!,
-                CheckInDate = DateTime.Today.AddDays(7),
-                CheckOutDate = DateTime.Today.AddDays(10),
-                TotalPrice = rental.MonthPrice,
-                BookingStatus = "Pending",
-                CreatedAt = DateTime.Now,
-                SharedCustomerIds = new List<Guid>(),
-                SharedCustomerEmails = new List<string>()
-            };
+                    UserId = request.UserId,
+                    RentalId = request.RentalId,
+                    StartDate = request.StartDate,
+                    EndDate = request.EndDate,
+                    TotalAmount = totalAmount
+                };
+
+                _context.Bookings.Add(booking);
+                await _context.SaveChangesAsync();
+
+                var adminIncome = new AdminIncome
+                {
+                    BookingId = booking.Id,
+                    Amount = serviceFee
+                };
+                _context.AdminIncomes.Add(adminIncome);
+                await _context.SaveChangesAsync();
+
+                await transaction.CommitAsync();
+
+                return new BookingResponseDto
+                {
+                    BookingId = booking.Id,
+                    Message = "Booking successful! 15% service fee collected.",
+                    TotalAmount = totalAmount
+                };
+            }
+            catch (Exception)
+            {
+                await transaction.RollbackAsync();
+                throw;
+            }
         }
     }
 

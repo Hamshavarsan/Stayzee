@@ -6,9 +6,9 @@ namespace StayZee.Application.Interfaces.Iservices
 {
     public interface IBookingService
     {
-        Task<BookingResponseDto> CreateBookingAsync(BookingRequestDto request);
-        Task<IEnumerable<BookingResponseDto>> GetAllBookingsAsync();
-        Task<BookingResponseDto?> GetBookingByIdAsync(Guid bookingId);
-        Task<BookingResponseDto> ShareBookingAsync(BookingShareRequestDto request);
+        //Task<BookingResponseDto> CreateBookingAsync(BookingRequestDto request);
+        //Task<IEnumerable<BookingResponseDto>> GetAllBookingsAsync();
+        //Task<BookingResponseDto?> GetBookingByIdAsync(Guid bookingId);
+        //Task<BookingResponseDto> ShareBookingAsync(BookingShareRequestDto request);
     }
 }

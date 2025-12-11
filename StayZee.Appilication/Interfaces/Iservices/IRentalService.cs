@@ -1,5 +1,6 @@
 ﻿using StayZee.Application.DTOs.RequestDTO;
 using StayZee.Application.DTOs.ResponseDTO;
+using StayZee.Application.DTOs.ResponseDTO.StayZee.Application.DTOs.ResponseDTO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,7 +13,8 @@ namespace StayZee.Application.Interfaces.Iservices
     {
         Task<RentalResponse> CreateRental(CreateRentalRequest request);
         Task<List<RentalDto>> GetAllRentalsAsync(); // parameter இல்லை!
-        Task<BookingResponseDto> CreateBookingAsync(int rentalId, int userId);
+    
+        Task<BookingResponseDto> CreateBookingAsync(CreateBookingRequest request);
 
     }
 }

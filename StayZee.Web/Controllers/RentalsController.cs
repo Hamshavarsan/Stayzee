@@ -43,12 +43,10 @@ namespace StayZee.Web.Controllers
         }
 
         [HttpPost("book")]
-        [Authorize]  // Requires authentication (use JWT or your auth mechanism)
-        public async Task<IActionResult> BookRental([FromBody] BookRequest request)
+        public async Task<IActionResult> Book([FromBody] CreateBookingRequest request)
         {
-            // UserId can be fetched from claims if using auth: int userId = int.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier));
-            var response = await _service.CreateBookingAsync(request.RentalId, request.UserId);
-            return Ok(response);
+            var result = await _service.CreateBookingAsync(request);
+            return Ok(result);
         }
 
     }

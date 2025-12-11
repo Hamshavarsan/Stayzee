@@ -38,18 +38,18 @@ namespace StayZee.Web.Controllers
         [HttpPost("booking")]
         public async Task<IActionResult> CreateBooking([FromBody] Booking booking)
         {
-            booking.Status = "Pending";
+            //booking.Status = "Pending";
             await _db.Bookings.AddAsync(booking);
             await _db.SaveChangesAsync();
             return Ok(booking);
         }
 
         [HttpGet("bookings/{customerId}")]
-        public async Task<IActionResult> GetBookings(Guid customerId)
-        {
-            var bs = await _db.Bookings.Where(b => b.CustomerId == customerId).ToListAsync();
-            return Ok(bs);
-        }
+       // public async Task<IActionResult> GetBookings(Guid customerId)
+       // {
+       ////     var bs = await _db.Bookings.Where(b => b.CustomerId == customerId).ToListAsync();
+       //     return Ok(bs);
+       // }
 
         // Profile endpoints (simplified)
         [HttpGet("profile/{id}")]

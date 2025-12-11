@@ -36,7 +36,7 @@ builder.Services.AddScoped<IHomeRepository, HomeRepository>();
 builder.Services.AddScoped<IHomeApporovalStatusRepository, HomeApporovalStatusRepository>();
 builder.Services.AddScoped<ICustomerRepository, CustomerRepository>();
 builder.Services.AddScoped<IRentalRepository, RentalRepository>();
-builder.Services.AddScoped<IBookingRepository, BookingRepository>();
+//builder.Services.AddScoped<IBookingRepository, BookingRepository>();
 builder.Services.AddScoped<IBookingStatusRepository, BookingStatusRepository>();
 
 // ----------------------
@@ -45,8 +45,7 @@ builder.Services.AddScoped<IBookingStatusRepository, BookingStatusRepository>();
 builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddScoped<IRentalService, RentalService>();
 builder.Services.AddScoped<ICloudService, CloudService>();
-builder.Services.AddScoped<IBookingService, BookingService>();
-builder.Services.AddScoped<IAdminService, AdminService>();
+//builder.Services.AddScoped<IAdminService, AdminService>();
 // builder.Services.AddScoped<IEmailService, EmailService>(); // Removed to avoid conflict with manual Singleton registration
 
 // ----------------------

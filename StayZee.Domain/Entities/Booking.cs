@@ -1,43 +1,22 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace StayZee.Domain.Entities
 {
     public class Booking
     {
-        public Guid Id { get; set; }
-       
-        public Guid BookingId { get; set; } = Guid.NewGuid();
-        public Guid PropertyId { get; set; }
-        public Guid CustomerId { get; set; }
-        public Customer? Customer { get; set; }
-        public Guid HomeId { get; set; }
-        public Home? Home { get; set; }
-        public DateTime CheckInDate { get; set; }
-        public DateTime CheckOutDate { get; set; }
-        public decimal TotalPrice { get; set; }
-        public Guid BookingStatusId { get; set; }
-        public BookingStatus? BookingStatus { get; set; }
-        public Guid PaymentStatusId { get; set; }
-        public PaymentStatus? PaymentStatus { get; set; }
-        public Payment? Payment { get; set; }
-        public Invoice? Invoice { get; set; }
-        public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
-
-        // ✅ Fix non-nullable property by initializing
-        public string Status { get; set; } = string.Empty;
-
-        // Shared booking
-        public string? SharedEmails { get; set; }
-        public DateTime? SharedAt { get; set; }
+        public int Id { get; set; }
+        public string UserId { get; set; }
         public int RentalId { get; set; }
-        public int UserId { get; set; }
-       
-        // Booking.cs
-        public ICollection<BookingSharedCustomer> SharedCustomers { get; set; } = new List<BookingSharedCustomer>();
+        public DateTime StartDate { get; set; }
+        public DateTime EndDate { get; set; }
+        public decimal TotalAmount { get; set; }
+        public DateTime BookedAt { get; set; } = DateTime.UtcNow;
 
-
+        // Navigation
+        public Rental Rental { get; set; }
     }
 }
-
-
-
