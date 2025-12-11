@@ -18,6 +18,11 @@ namespace StayZee.Infrastructure.Repository
             _cloud = cloud;
         }
 
+        public Task<BookingResponseDto> CreateBookingAsync(Guid rentalId, Guid userId)
+        {
+            throw new NotImplementedException();
+        }
+
         public async Task<RentalResponse> CreateRental(CreateRentalRequest request)
         {
             if (request.Photos == null || request.Photos.Count < 4)
@@ -71,39 +76,87 @@ namespace StayZee.Infrastructure.Repository
                 throw;
             }
         }
-        // ---------------- GET ALL HOMES -----------------------
-        public async Task<List<RentalCardDTO>> GetAllRentals()
+        // StayZee.Infrastructure.Repository → RentalService.cs
+
+        // GET ALL RENTALS – HOME PAGE-க்கு இதுதான் தேவை
+        public async Task<List<RentalDto>> GetAllRentalsAsync()
         {
-            return await _context.Rentals
-                .Select(r => new RentalCardDTO
+            var rentals = await _context.Rentals
+                //.Where(r => r.IsApproved == true && r.IsDeleted != true) // நல்ல வீடுகள் மட்டும்
+                .Select(r => new RentalDto
                 {
                     Id = r.Id,
-                    HomeTitle = r.HomeTitle,
-                    HomeLocation = r.HomeLocation,
+                    HomeTitle = r.HomeTitle ?? "Luxury Stay",
+                    HomeLocation = r.HomeLocation ?? "Sri Lanka",
                     Bedrooms = r.Bedrooms,
                     PetFriendly = r.PetFriendly,
                     OneDayPrice = r.OneDayPrice,
                     MonthPrice = r.MonthPrice,
-                    PhotoUrl1 = r.PhotoUrl1
+                    PhotoUrls = new List<string>
+                    {
+                        r.PhotoUrl1 ?? "",
+                        r.PhotoUrl2 ?? "",
+                        r.PhotoUrl3 ?? "",
+                        r.PhotoUrl4 ?? ""
+                    }
+                    .Where(url => !string.IsNullOrWhiteSpace(url))
+                    .Take(4) // max 4 photos
+                    .ToList()
                 })
                 .ToListAsync();
-        }
 
-        // --------------- GET 4 IMAGES OF ONE HOME ---------------
-        public async Task<RentalImagesDTO> GetRentalImages(int id)
+            return rentals;
+        }
+        public async Task<BookingResponseDto> CreateBookingAsync(int rentalId, int userId)
         {
-            var rental = await _context.Rentals.FindAsync(id);
+            var rental = await _context.Rentals
+                .FirstOrDefaultAsync(r => r.Id == rentalId && r.IsApproved == true && r.IsDeleted != true);
 
             if (rental == null)
-                return null;
+                throw new Exception("Rental not found or not approved");
 
-            return new RentalImagesDTO
+            var user = await _context.Users
+                .FirstOrDefaultAsync(u => u.Id == userId);
+
+            if (user == null)
+                throw new Exception("User not found");
+
+            var booking = new Booking
             {
-                Image1 = rental.PhotoUrl1,
-                Image2 = rental.PhotoUrl2,
-                Image3 = rental.PhotoUrl3,
-                Image4 = rental.PhotoUrl4
+                RentalId = rentalId,
+                UserId = userId,
+                //BookingStatus = "Pending",
+                CreatedAt = DateTime.UtcNow
+            };
+
+            _context.Bookings.Add(booking);
+            await _context.SaveChangesAsync();
+
+            return new BookingResponseDto
+            {
+                BookingId = Guid.NewGuid(),                    // Guid generate பண்ணு
+                Message = "Booking request sent successfully!",
+                CustomerId = Guid.Parse(user.Id.ToString()),   // int → Guid ஆ மாத்து
+                HomeId = Guid.Parse(rental.Id.ToString()),     // int → Guid ஆ மாத்து
+                HomeName = rental.HomeTitle,
+                HomeImages = new List<string?>
+                {
+                    rental.PhotoUrl1,
+                    rental.PhotoUrl2,
+                    rental.PhotoUrl3,
+                    rental.PhotoUrl4
+                }
+                .Where(x => !string.IsNullOrEmpty(x))
+                .ToList()!,
+                CheckInDate = DateTime.Today.AddDays(7),
+                CheckOutDate = DateTime.Today.AddDays(10),
+                TotalPrice = rental.MonthPrice,
+                BookingStatus = "Pending",
+                CreatedAt = DateTime.Now,
+                SharedCustomerIds = new List<Guid>(),
+                SharedCustomerEmails = new List<string>()
             };
         }
     }
+
 }

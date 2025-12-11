@@ -12,8 +12,8 @@ using StayZee.Infrastructure.Data;
 namespace StayZee.Infrastructure.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20251203210203_PropertyFixed_Final")]
-    partial class PropertyFixed_Final
+    [Migration("20251210200548_BookingSharedCustomerTable_Fixed_v2")]
+    partial class BookingSharedCustomerTable_Fixed_v2
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -27,8 +27,11 @@ namespace StayZee.Infrastructure.Migrations
 
             modelBuilder.Entity("StayZee.Domain.Entities.Booking", b =>
                 {
-                    b.Property<Guid>("BookingId")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("BookingId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<Guid>("BookingStatusId")
@@ -58,6 +61,15 @@ namespace StayZee.Infrastructure.Migrations
                     b.Property<Guid>("PropertyId")
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<int>("RentalId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("SharedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("SharedEmails")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Status")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -66,7 +78,10 @@ namespace StayZee.Infrastructure.Migrations
                         .HasPrecision(18, 2)
                         .HasColumnType("decimal(18,2)");
 
-                    b.HasKey("BookingId");
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
 
                     b.HasIndex("BookingStatusId");
 
@@ -79,6 +94,28 @@ namespace StayZee.Infrastructure.Migrations
                     b.HasIndex("PaymentStatusId");
 
                     b.ToTable("Bookings");
+                });
+
+            modelBuilder.Entity("StayZee.Domain.Entities.BookingSharedCustomer", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("BookingId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("CustomerId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CustomerId");
+
+                    b.HasIndex("BookingId", "CustomerId")
+                        .IsUnique();
+
+                    b.ToTable("BookingSharedCustomers");
                 });
 
             modelBuilder.Entity("StayZee.Domain.Entities.BookingStatus", b =>
@@ -193,7 +230,7 @@ namespace StayZee.Infrastructure.Migrations
 
                     b.HasKey("HomeApprovalStatusId");
 
-                    b.ToTable("HomeApporavalStatuses");
+                    b.ToTable("HomeApprovalStatuses");
                 });
 
             modelBuilder.Entity("StayZee.Domain.Entities.HomeDocument", b =>
@@ -471,9 +508,8 @@ namespace StayZee.Infrastructure.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("AccountNumber")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("Bedrooms")
+                        .HasColumnType("int");
 
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
@@ -485,8 +521,24 @@ namespace StayZee.Infrastructure.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("HomeTitle")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsApproved")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<decimal>("MonthPrice")
+                        .HasColumnType("decimal(18,2)");
+
                     b.Property<decimal>("OneDayPrice")
                         .HasColumnType("decimal(18,2)");
+
+                    b.Property<bool>("PetFriendly")
+                        .HasColumnType("bit");
 
                     b.Property<string>("PhotoUrl1")
                         .IsRequired()
@@ -523,6 +575,9 @@ namespace StayZee.Infrastructure.Migrations
                     b.Property<string>("Email")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsBlocked")
+                        .HasColumnType("bit");
 
                     b.Property<string>("NICOrPassport")
                         .IsRequired()
@@ -575,19 +630,19 @@ namespace StayZee.Infrastructure.Migrations
                     b.HasOne("StayZee.Domain.Entities.BookingStatus", "BookingStatus")
                         .WithMany("Bookings")
                         .HasForeignKey("BookingStatusId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.HasOne("StayZee.Domain.Entities.Customer", "Customer")
                         .WithMany("Bookings")
                         .HasForeignKey("CustomerId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.HasOne("StayZee.Domain.Entities.Home", "Home")
                         .WithMany("Bookings")
                         .HasForeignKey("HomeId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.HasOne("StayZee.Domain.Entities.Invoice", "Invoice")
@@ -597,7 +652,7 @@ namespace StayZee.Infrastructure.Migrations
                     b.HasOne("StayZee.Domain.Entities.PaymentStatus", "PaymentStatus")
                         .WithMany("Bookings")
                         .HasForeignKey("PaymentStatusId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.Navigation("BookingStatus");
@@ -609,6 +664,25 @@ namespace StayZee.Infrastructure.Migrations
                     b.Navigation("Invoice");
 
                     b.Navigation("PaymentStatus");
+                });
+
+            modelBuilder.Entity("StayZee.Domain.Entities.BookingSharedCustomer", b =>
+                {
+                    b.HasOne("StayZee.Domain.Entities.Booking", "Booking")
+                        .WithMany("SharedCustomers")
+                        .HasForeignKey("BookingId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("StayZee.Domain.Entities.Customer", "Customer")
+                        .WithMany("SharedBookings")
+                        .HasForeignKey("CustomerId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Booking");
+
+                    b.Navigation("Customer");
                 });
 
             modelBuilder.Entity("StayZee.Domain.Entities.Home", b =>
@@ -669,6 +743,8 @@ namespace StayZee.Infrastructure.Migrations
             modelBuilder.Entity("StayZee.Domain.Entities.Booking", b =>
                 {
                     b.Navigation("Payment");
+
+                    b.Navigation("SharedCustomers");
                 });
 
             modelBuilder.Entity("StayZee.Domain.Entities.BookingStatus", b =>
@@ -681,6 +757,8 @@ namespace StayZee.Infrastructure.Migrations
                     b.Navigation("Bookings");
 
                     b.Navigation("KYCUploads");
+
+                    b.Navigation("SharedBookings");
                 });
 
             modelBuilder.Entity("StayZee.Domain.Entities.Home", b =>
