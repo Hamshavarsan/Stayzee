@@ -3,6 +3,7 @@
     public class BookingResponseDto
     {
         public Guid BookingId { get; set; }
+        public string Message { get; set; }
         public Guid CustomerId { get; set; }
         public Guid HomeId { get; set; }
         public string? HomeName { get; set; }

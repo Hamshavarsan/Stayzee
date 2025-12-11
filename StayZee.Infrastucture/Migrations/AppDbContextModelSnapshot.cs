@@ -24,8 +24,11 @@ namespace StayZee.Infrastructure.Migrations
 
             modelBuilder.Entity("StayZee.Domain.Entities.Booking", b =>
                 {
-                    b.Property<Guid>("BookingId")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("BookingId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<Guid>("BookingStatusId")
@@ -55,6 +58,9 @@ namespace StayZee.Infrastructure.Migrations
                     b.Property<Guid>("PropertyId")
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<int>("RentalId")
+                        .HasColumnType("int");
+
                     b.Property<DateTime?>("SharedAt")
                         .HasColumnType("datetime2");
 
@@ -69,7 +75,10 @@ namespace StayZee.Infrastructure.Migrations
                         .HasPrecision(18, 2)
                         .HasColumnType("decimal(18,2)");
 
-                    b.HasKey("BookingId");
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
 
                     b.HasIndex("BookingStatusId");
 
@@ -512,6 +521,12 @@ namespace StayZee.Infrastructure.Migrations
                     b.Property<string>("HomeTitle")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsApproved")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
 
                     b.Property<decimal>("MonthPrice")
                         .HasColumnType("decimal(18,2)");

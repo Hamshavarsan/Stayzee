@@ -4,6 +4,8 @@ namespace StayZee.Domain.Entities
 {
     public class Booking
     {
+        public Guid Id { get; set; }
+       
         public Guid BookingId { get; set; } = Guid.NewGuid();
         public Guid PropertyId { get; set; }
         public Guid CustomerId { get; set; }
@@ -27,6 +29,9 @@ namespace StayZee.Domain.Entities
         // Shared booking
         public string? SharedEmails { get; set; }
         public DateTime? SharedAt { get; set; }
+        public int RentalId { get; set; }
+        public int UserId { get; set; }
+       
         // Booking.cs
         public ICollection<BookingSharedCustomer> SharedCustomers { get; set; } = new List<BookingSharedCustomer>();
 
