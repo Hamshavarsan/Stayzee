@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
+// using Microsoft.EntityFrameworkCore.Metadata.Internal; // Removed to resolve ambiguity
 using StayZee.Application.Interfaces.Iservices;
+using StayZee.Domain.Entities;
 
 namespace StayZee.Web.Controllers
 {
@@ -31,7 +32,7 @@ namespace StayZee.Web.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create([FromBody] Property p)
+        public async Task<IActionResult> Create([FromBody] StayZee.Domain.Entities.Property p)
         {
             await _service.CreateAsync(p); // Removed assignment to a variable since the method returns void
             return Ok("Property created successfully."); // Added a success message

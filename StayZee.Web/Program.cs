@@ -11,6 +11,13 @@ using StayZee.Infrastructure.Repository;
 using StayZee.Infrastructure.Repostory;
 using System.Text;
 
+// using StayZee.Appilication.Common.Models;
+// using StayZee.Appilication.Common.Interfaces;
+// References removed as EmailSettings is no longer used in Program.cs
+// using StayZee.Infrastucture.Services;
+// Aliases removed as duplicates are deleted
+
+
 var builder = WebApplication.CreateBuilder(args);
 
 // ----------------------
@@ -40,6 +47,37 @@ builder.Services.AddScoped<IRentalService, RentalService>();
 builder.Services.AddScoped<ICloudService, CloudService>();
 builder.Services.AddScoped<IBookingService, BookingService>();
 builder.Services.AddScoped<IAdminService, AdminService>();
+// builder.Services.AddScoped<IEmailService, EmailService>(); // Removed to avoid conflict with manual Singleton registration
+
+// ----------------------
+// Email Service
+// ----------------------
+var emailSection = builder.Configuration.GetSection("EmailSettings");
+
+string smtpHost = emailSection["SmtpHost"];
+string smtpPortString = emailSection["SmtpPort"];
+int smtpPort = 587; // default
+if (!string.IsNullOrEmpty(smtpPortString) && int.TryParse(smtpPortString, out int port))
+{
+    smtpPort = port;
+}
+
+bool enableSsl = bool.Parse(emailSection["EnableSsl"]);
+string username = emailSection["Username"];
+string password = emailSection["Password"];
+string fromAddress = emailSection["FromAddress"];
+string fromName = emailSection["FromName"]; // <- define பண்ணவும்
+
+builder.Services.AddSingleton<IEmailService>(new EmailService(
+    smtpHost,
+    smtpPort,
+    enableSsl,
+    username,
+    password,
+    fromAddress,
+    fromName // <- Pass பண்ண வேண்டும்
+));
+
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();

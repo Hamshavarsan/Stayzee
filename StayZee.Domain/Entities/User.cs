@@ -17,5 +17,8 @@ namespace StayZee.Domain.Entities
         public string PasswordHash { get; set; }
         public string Role { get; set; } // "Admin", "Customer", "Rentals"
         public bool IsBlocked { get; set; } = false;
+        public string? VerificationCode { get; set; }
+        public DateTime? VerificationExpiresAt { get; set; }
+        public bool IsVerified { get; set; } = false;
     }
 }

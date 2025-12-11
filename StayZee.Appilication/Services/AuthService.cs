@@ -18,18 +18,52 @@ namespace StayZee.Application.Services
     {
         private readonly IUserRepository _userRepository;
         private readonly IConfiguration _config;
+        private readonly IEmailService _emailService;
 
-        public AuthService(IUserRepository userRepository, IConfiguration config)
+        public AuthService(IUserRepository userRepository, IConfiguration config, IEmailService emailService)
         {
             _userRepository = userRepository;
             _config = config;
+            _emailService = emailService;
         }
 
         public async Task<AuthResponseDTO> RegisterAsync(RegisterDTO model)
         {
             var existingUser = await _userRepository.GetByUsernameAsync(model.Username);
+            
             if (existingUser != null)
-                throw new Exception("Username already exists!");
+            {
+                if (existingUser.IsVerified)
+                {
+                    throw new Exception("Username already exists!");
+                }
+                
+                // If user exists but not verified, resend code
+                var newCode = new Random().Next(100000, 999999).ToString();
+                existingUser.VerificationCode = newCode;
+                existingUser.VerificationExpiresAt = DateTime.UtcNow.AddMinutes(15);
+                
+                // Optionally update password if needed, but for now just update code
+                 existingUser.PasswordHash = BCrypt.Net.BCrypt.HashPassword(model.Password); // Ensure they can login with new pass
+                 existingUser.Email = model.Email; // Allow correcting email
+
+                await _userRepository.UpdateUserAsync(existingUser);
+                
+                await _emailService.SendEmailAsync(
+                    existingUser.Email, 
+                    "StayZee - Verify Your Email", 
+                    $"Your verification code is: <b>{newCode}</b>. It expires in 15 minutes."
+                );
+                
+                return new AuthResponseDTO 
+                { 
+                    Message = "Verification code resent to your email.", 
+                    Username = existingUser.Username, 
+                    Role = existingUser.Role 
+                };
+            }
+
+            var verificationCode = new Random().Next(100000, 999999).ToString();
 
             var newUser = new User
             {
@@ -39,11 +73,26 @@ namespace StayZee.Application.Services
                 PhoneNumber = model.PhoneNumber,
                 NICOrPassport = model.NICOrPassport,
                 PasswordHash = BCrypt.Net.BCrypt.HashPassword(model.Password),
-                Role = model.Role
+                Role = model.Role,
+                VerificationCode = verificationCode,
+                VerificationExpiresAt = DateTime.UtcNow.AddMinutes(15),
+                IsVerified = false
             };
 
             await _userRepository.AddUserAsync(newUser);
-            return await GenerateToken(newUser); // இங்க call ஆகுது
+
+            await _emailService.SendEmailAsync(
+                newUser.Email, 
+                "StayZee - Verify Your Email", 
+                $"Your verification code is: <b>{verificationCode}</b>. It expires in 15 minutes."
+            );
+
+            return new AuthResponseDTO 
+            { 
+                Message = "Registration successful. Please check your email for verification code.", 
+                Username = newUser.Username, 
+                Role = newUser.Role 
+            };
         }
 
         public async Task<AuthResponseDTO> LoginAsync(LoginDTO model)
