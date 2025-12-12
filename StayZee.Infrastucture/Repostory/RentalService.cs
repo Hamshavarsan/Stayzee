@@ -19,12 +19,12 @@ namespace StayZee.Infrastructure.Repository
             _cloud = cloud;
         }
 
-        public Task<BookingResponseDto> CreateBookingAsync(Guid rentalId, Guid userId)
+        public Task<BookingResponseDto> CreateBookingAsync(int rentalId, int userId)
         {
             throw new NotImplementedException();
         }
 
-        public async Task<RentalResponse> CreateRental(CreateRentalRequest request)
+        public async Task<RentalResponseDTO> CreateRental(CreateRentalRequest request)
         {
             if (request.Photos == null || request.Photos.Count < 4)
                 throw new Exception("Minimum 4 photos required");
@@ -65,7 +65,7 @@ namespace StayZee.Infrastructure.Repository
                 await _context.SaveChangesAsync();     // User.Role + Rental → இரண்டும் save ஆகும்
                 await transaction.CommitAsync();
 
-                return new RentalResponse
+                return new RentalResponseDTO
                 {
                     RentalId = rental.Id,
                    // Message = "Property listed successfully! Role updated to Rentals"
@@ -174,6 +174,32 @@ namespace StayZee.Infrastructure.Repository
                 throw;
             }
         }
+        public async Task<RentalResponseDTO?> GetRentalByIdAsync(int id)
+        {
+            var rental = await _context.Rentals
+                .Where(r => r.Id == id)
+                .Select(r => new RentalResponseDTO
+                {
+                    Id = r.Id,
+                    HomeTitle = r.HomeTitle,
+                    HomeLocation = r.HomeLocation,
+                    Bedrooms = r.Bedrooms,
+                    PetFriendly = r.PetFriendly,
+                    OneDayPrice = r.OneDayPrice,
+                    MonthPrice = r.MonthPrice,
+                    PhotoUrls = new List<string>
+                    {
+                    r.PhotoUrl1,
+                    r.PhotoUrl2,
+                    r.PhotoUrl3,
+                    r.PhotoUrl4
+                    }.Where(x => !string.IsNullOrEmpty(x)).ToList()
+                })
+                .FirstOrDefaultAsync();
+
+            return rental;
+        }
+
     }
 
 }

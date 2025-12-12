@@ -15,13 +15,13 @@ namespace StayZee.Web.Controllers
     public class RentalsController : ControllerBase
     {
         private readonly IRentalService _service;
+        private readonly AppDbContext _context;
 
-        public RentalsController(IRentalService service)
+        public RentalsController(IRentalService service, AppDbContext context)
         {
             _service = service;
+            _context = context;
         }
-
-
         [HttpPost("create")]
         public async Task<IActionResult> CreateRental([FromForm] CreateRentalRequest request)
         {
@@ -48,10 +48,20 @@ namespace StayZee.Web.Controllers
             var result = await _service.CreateBookingAsync(request);
             return Ok(result);
         }
+        [HttpGet("{id:int}")]
+        public async Task<IActionResult> GetRentalById(int id)
+        {
+            var rental = await _service.GetRentalByIdAsync(id);
+
+            if (rental == null)
+                return NotFound("Property not found");
+
+            return Ok(rental);
+        }
 
     }
-
-
-
-
 }
+
+
+
+
