@@ -200,6 +200,42 @@ namespace StayZee.Infrastructure.Repository
             return rental;
         }
 
+        public async Task<List<RentalDto>> SearchRentalsAsync(string? city)
+        {
+            var query = _context.Rentals.AsQueryable();
+
+            if (!string.IsNullOrWhiteSpace(city))
+            {
+                var searchTerm = city.ToLower();
+                query = query.Where(r => r.HomeLocation.ToLower().Contains(searchTerm));
+            }
+
+            var rentals = await query
+                .Select(r => new RentalDto
+                {
+                    Id = r.Id,
+                    HomeTitle = r.HomeTitle ?? "Luxury Stay",
+                    HomeLocation = r.HomeLocation ?? "Sri Lanka",
+                    Bedrooms = r.Bedrooms,
+                    PetFriendly = r.PetFriendly,
+                    OneDayPrice = r.OneDayPrice,
+                    MonthPrice = r.MonthPrice,
+                    PhotoUrls = new List<string>
+                    {
+                r.PhotoUrl1 ?? "",
+                r.PhotoUrl2 ?? "",
+                r.PhotoUrl3 ?? "",
+                r.PhotoUrl4 ?? ""
+                    }
+                    .Where(url => !string.IsNullOrWhiteSpace(url))
+                    .Take(4)
+                    .ToList()
+                })
+                .ToListAsync();
+
+            return rentals;
+        }
+
     }
 
 }

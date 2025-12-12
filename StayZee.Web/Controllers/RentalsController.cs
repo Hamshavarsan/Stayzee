@@ -59,6 +59,20 @@ namespace StayZee.Web.Controllers
             return Ok(rental);
         }
 
+        [HttpGet("search")]
+        public async Task<IActionResult> SearchRentals([FromQuery] string? city)
+        {
+            try
+            {
+                var rentals = await _service.SearchRentalsAsync(city);
+                return Ok(rentals);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, "Server error: " + ex.Message);
+            }
+        }
+
     }
 }
 

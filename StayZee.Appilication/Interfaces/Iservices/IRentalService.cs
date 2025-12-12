@@ -17,6 +17,8 @@ namespace StayZee.Application.Interfaces.Iservices
     
         Task<BookingResponseDto> CreateBookingAsync(CreateBookingRequest request);
         Task<RentalResponseDTO?> GetRentalByIdAsync(int id);
+        Task<List<RentalDto>> SearchRentalsAsync(string? city); // New search method
+
 
     }
 }
