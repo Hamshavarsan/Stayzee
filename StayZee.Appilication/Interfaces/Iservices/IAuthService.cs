@@ -13,6 +13,9 @@ namespace StayZee.Application.Interfaces.Iservices
     {
         Task<AuthResponseDTO> RegisterAsync(RegisterDTO model);
         Task<AuthResponseDTO> LoginAsync(LoginDTO model);
+        Task<string> ForgotPasswordAsync(ForgotPasswordRequestDTO model);
+        Task<string> ResetPasswordAsync(ResetPasswordDTO model);
+
     }
 }
 

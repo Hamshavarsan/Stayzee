@@ -66,5 +66,19 @@ namespace StayZee.Web.Controllers
             // Return JSON for frontend to handle navigation
             return Ok(new { message = "Account verified successfully!" });
         }
+        [HttpPost("forgot-password")]
+        public async Task<IActionResult> ForgotPassword(ForgotPasswordRequestDTO dto)
+        {
+            var result = await _authService.ForgotPasswordAsync(dto);
+            return Ok(new { message = result });
+        }
+
+        [HttpPost("reset-password")]
+        public async Task<IActionResult> ResetPassword(ResetPasswordDTO dto)
+        {
+            var result = await _authService.ResetPasswordAsync(dto);
+            return Ok(new { message = result });
+        }
+
     }
 }

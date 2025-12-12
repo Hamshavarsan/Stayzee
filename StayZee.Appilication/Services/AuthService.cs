@@ -134,6 +134,50 @@ namespace StayZee.Application.Services
                 UserId = user.Id                     // இதுதான் Angular-க்கு வரும்!
             };
         }
+        public async Task<string> ForgotPasswordAsync(ForgotPasswordRequestDTO model)
+        {
+            var user = await _userRepository.GetByUsernameAsync(model.Username);
+
+            if (user == null || user.Email != model.Email)
+                throw new Exception("Invalid username or email");
+
+            var code = new Random().Next(100000, 999999).ToString();
+
+            user.VerificationCode = code;
+            user.VerificationExpiresAt = DateTime.UtcNow.AddMinutes(15);
+
+            await _userRepository.UpdateUserAsync(user);
+
+            await _emailService.SendEmailAsync(
+                user.Email,
+                "Password Reset Code - StayZee",
+                $"Your password reset code is <b>{code}</b>. It expires in 15 minutes."
+            );
+
+            return "Password reset code sent to your email.";
+        }
+        public async Task<string> ResetPasswordAsync(ResetPasswordDTO model)
+        {
+            var user = await _userRepository.GetByUsernameAsync(model.Username);
+
+            if (user == null)
+                throw new Exception("User not found");
+
+            if (user.VerificationCode != model.Code ||
+                user.VerificationExpiresAt < DateTime.UtcNow)
+                throw new Exception("Invalid or expired code");
+
+            user.PasswordHash = BCrypt.Net.BCrypt.HashPassword(model.NewPassword);
+            user.VerificationCode = null;
+            user.VerificationExpiresAt = null;
+
+            await _userRepository.UpdateUserAsync(user);
+
+            return "Password reset successful.";
+        }
+
+
+
     }
 }
 
