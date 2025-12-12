@@ -16,6 +16,7 @@ namespace StayZee.Application.DTOs.ResponseDTO
         public decimal OneDayPrice { get; set; }
         public decimal MonthPrice { get; set; }
         public List<string> PhotoUrls { get; set; }
+        public string Message { get; set; }
         // public string Message { get; set; }
     }
 }

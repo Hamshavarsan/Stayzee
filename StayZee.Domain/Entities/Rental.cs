@@ -22,7 +22,7 @@
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
         public bool IsApproved { get; set; }
         public bool IsDeleted { get; set; }
-        public int? _ord { get; set; }
+        //public int? _ord { get; set; }
 
     }
 }

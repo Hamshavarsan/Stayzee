@@ -35,14 +35,19 @@ namespace StayZee.Infrastructure.Repository
 
             try
             {
-                // User எடுத்து Role மாற்று → Database-லே "Rentals" ஆக மாறும்
                 var user = await _context.Users
                     .FirstOrDefaultAsync(u => u.Id == request.UserId);
 
                 if (user == null)
                     throw new Exception("User not found");
 
-                user.Role = "Rentals"; // இதுதான் நீ வேண்டிய முக்கியமான line
+                // Only change role if it's not already "Rentals"
+                if (user.Role != "Rentals")
+                {
+                    user.Role = "Rentals"; // இங்கதான் actual change நடக்கும்
+                                           // முதல் தடவை மட்டும் update ஆகும்
+                }
+                // else → ஒன்றும் செய்ய வேண்டியதில்லை → DB update போகாது
 
                 var rental = new Rental
                 {
@@ -57,18 +62,19 @@ namespace StayZee.Infrastructure.Repository
                     PhotoUrl1 = urls[0],
                     PhotoUrl2 = urls[1],
                     PhotoUrl3 = urls[2],
-                    PhotoUrl4 = urls[3]
-                   
+                    PhotoUrl4 = urls[3],
+                    CreatedAt = DateTime.UtcNow
                 };
 
                 _context.Rentals.Add(rental);
-                await _context.SaveChangesAsync();     // User.Role + Rental → இரண்டும் save ஆகும்
+                await _context.SaveChangesAsync(); // User role மாறினால் மட்டும் update query போகும்
+
                 await transaction.CommitAsync();
 
                 return new RentalResponseDTO
                 {
                     RentalId = rental.Id,
-                   // Message = "Property listed successfully! Role updated to Rentals"
+                    Message = "Property listed successfully!"
                 };
             }
             catch (Exception)
